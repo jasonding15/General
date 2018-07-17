@@ -1,6 +1,6 @@
 package programmingChallengesCh3;
 
-public class RetailItem 
+public class RetailItem //Number 4
 {
 	private String description;
 	private int unitsOnHand;
