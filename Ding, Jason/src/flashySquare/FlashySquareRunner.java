@@ -16,19 +16,26 @@ public class FlashySquareRunner extends PApplet
 	
 	public void setup()
 	{
-		topLeft = new FlashySquare(this, 100, 100, 1000, 1000);
-		topRight = new FlashySquare (this, 300, 100, 2000, 2000);
-		bottomLeft = new FlashySquare (this, 100, 300, 3000, 3000);
-		bottomRight = new FlashySquare (this, 300, 300, 4000, 4000);
+		topLeft = new FlashySquare(this, 100, 100, 1000);
+		topRight = new FlashySquare (this, 300, 100, 2000);
+		bottomLeft = new FlashySquare (this, 100, 300, 3000);
+		bottomRight = new FlashySquare (this, 300, 300, 4000);
 	}
 	
 	public void draw()
 	{
 		background(190, 221, 216);
 		topLeft.updateVisibility();
+		topLeft.drawSelf();
+		
 		topRight.updateVisibility();
+		topRight.drawSelf();
+		
 		bottomLeft.updateVisibility();
+		bottomLeft.drawSelf();
+		
 		bottomRight.updateVisibility();
+		bottomRight.drawSelf();
 	}
 }
 

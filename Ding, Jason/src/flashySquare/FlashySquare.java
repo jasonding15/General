@@ -10,13 +10,13 @@ public class FlashySquare
 	private int firstChange, nextChange;
 	
 	
-    public FlashySquare(PApplet par, int initX, int initY, int frstChange, int nxtChange)
+    public FlashySquare(PApplet par, int initX, int initY, int frstChange)
     {
     		parent = par;
     		x = initX;
     		y = initY;
     		firstChange = frstChange;
-    		nextChange = nxtChange;
+    		nextChange = frstChange;
     		isVisible = true;
     }
 
@@ -27,14 +27,12 @@ public class FlashySquare
     			isVisible = ! isVisible;
     			firstChange= parent.millis() + nextChange;
     		}
-    		
-    		if (isVisible)
-    			drawSelf();
-
     }
     public void drawSelf()
     {
         parent.fill(208, 183, 232);
-        parent.rect(x, y, 100, 100);
+        
+        if (isVisible)
+        	parent.rect(x, y, 100, 100);
     }
 }

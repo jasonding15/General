@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class TrafficLight 
 {
 	private PApplet parent;
-	private int x, y, color; // 1: R, 2: y, 3: G
+	private int x, y, color; // 1: R, 2: Y, 3: G
 	
 	public TrafficLight(PApplet par, int ex, int why, int clr)
 	{
@@ -17,10 +17,10 @@ public class TrafficLight
 	
 	public void drawSelf()
 	{
-		parent.fill(209, 205, 156);
+		parent.fill(99);
 		parent.rect(x, y, 200, 600);
 		
-		parent.fill(165);
+		parent.fill(186, 185, 184);
 		parent.ellipse(x + 100, y + 100, 150, 150);
 		parent.ellipse(x + 100, y + 300, 150, 150);
 		parent.ellipse(x + 100, y + 500, 150, 150);
@@ -33,20 +33,24 @@ public class TrafficLight
 
 		if (color == 2)
 		{
-			parent.fill(255, 239, 25);
+			parent.fill(255, 252, 102);
 			parent.ellipse(x + 100,  y + 300,  150, 150);
 		}
 		
 		if (color == 3)
 		{
-			parent.fill(0, 255, 0);
+			parent.fill(60, 234, 66);
 			parent.ellipse(x + 100, y + 500, 150, 150);
 		}
 	}
 	
 	public void changeColor()
 	{
-		
+		color--;
+		if (color == 0)
+			color = 3;
 	}
+	
+	
 
 }
