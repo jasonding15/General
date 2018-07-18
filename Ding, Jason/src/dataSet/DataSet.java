@@ -3,10 +3,11 @@ package dataSet;
 public class DataSet 
 {
 	private double dataSum, numberOfValues;
+	
 	public DataSet(double firstValue)
 	{
-		dataSum += firstValue;
-		numberOfValues ++;
+		dataSum = firstValue;
+		numberOfValues = 1;
 	}
 	
 	public DataSet()
@@ -18,7 +19,7 @@ public class DataSet
 	public void addValue(double newValue)
 	{
 		dataSum += newValue;
-		numberOfValues ++;
+		numberOfValues++;
 	}
 	
 	public double getSum()
