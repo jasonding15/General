@@ -1,4 +1,4 @@
-package algorithmWorkbenchCh3;
+package algorithmWorkbenchChapter3;
 
 public class Book //Number 2
 {

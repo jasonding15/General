@@ -44,6 +44,11 @@ public class TrafficLight
 		}
 	}
 	
+	public int getColor()
+	{
+		return color;
+	}
+	
 	public void changeColor()
 	{
 		color--;
