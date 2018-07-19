@@ -10,8 +10,7 @@ public class TestsScoreRunner {
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.print("What is the first test score?: ");
-		double firstTest = keyboard.nextDouble();
-		TS.addFirstScore(firstTest);
+		TS.addFirstScore(keyboard.nextDouble());
 		
 		System.out.print("What is the second test score?: ");
 		double secondTest = keyboard.nextDouble();
