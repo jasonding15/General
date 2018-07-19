@@ -2,7 +2,7 @@ package stopLight;
 import processing.core.PApplet;
 public class TrafficLightRunner extends PApplet
 {
-	private TrafficLight leftStopLight, rightStopLight;
+	private TrafficLightController twoStopLights;
 	public static void main(String[] args) 
 	{
 		PApplet.main("stopLight.TrafficLightRunner");
@@ -14,20 +14,20 @@ public class TrafficLightRunner extends PApplet
 	}
 	public void setup()
 	{
-		leftStopLight = new TrafficLight(this, 200, 100, 1);
-		rightStopLight = new TrafficLight(this, 600, 100, 1);
+		twoStopLights = new TrafficLightController(this);
 	}
 	public void draw()
 	{
 		background(138, 234, 230);
-		leftStopLight.drawSelf();
-		rightStopLight.drawSelf();
+		twoStopLights.drawLights();
+		twoStopLights.updateShownLight();
 	}
 	
 	public void mousePressed()
 	{
-		leftStopLight.changeColor();
-		rightStopLight.changeColor();
+//		leftStopLight.changeColor();
+//		rightStopLight.changeColor();
+//		twoStopLights.goToNextState();
 	}
 }
 

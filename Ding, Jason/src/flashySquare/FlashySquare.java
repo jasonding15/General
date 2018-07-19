@@ -7,25 +7,25 @@ public class FlashySquare
 	private PApplet parent;
 	private int x, y;
 	private boolean isVisible;
-	private int firstChange, nextChange;
+	private int delay, nextChange;
 	
 	
-    public FlashySquare(PApplet par, int initX, int initY, int frstChange)
+    public FlashySquare(PApplet par, int initX, int initY, int dly)
     {
     		parent = par;
     		x = initX;
     		y = initY;
-    		firstChange = frstChange;
-    		nextChange = frstChange;
+    		delay = dly;
+    		nextChange = dly;
     		isVisible = true;
     }
 
     public void updateVisibility()
     {
-    		if (parent.millis() >= firstChange)
+    		if (parent.millis() >= nextChange)
     		{
     			isVisible = ! isVisible;
-    			firstChange= parent.millis() + nextChange;
+    			nextChange= parent.millis() + delay;
     		}
     }
     public void drawSelf()
