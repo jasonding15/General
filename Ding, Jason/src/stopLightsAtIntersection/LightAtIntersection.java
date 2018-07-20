@@ -28,6 +28,22 @@ public class LightAtIntersection
 		parent.ellipse(x + 50, y + 150, 75, 75);
 		parent.ellipse(x + 50, y + 250, 75, 75);
 	
+		if (hasArrow)
+		{
+			parent.fill(99);
+			parent.rect(x, y + 300, 100, 100);
+			parent.fill(0);
+			parent.ellipse(x + 50,  y + 350, 75, 75);
+			
+			if (arrowIsOn)
+			{
+				parent.fill(60, 234, 66);
+				parent.noStroke();
+				parent.triangle(x + 25, y + 350, x + 45, y + 330, x + 45, y + 370);
+				parent.rect(x + 45, y + 340, 25, 20);
+			}
+		}
+		
 		if (color == 1)
 		{
 			parent.fill(255, 0, 0);
@@ -46,23 +62,9 @@ public class LightAtIntersection
 			parent.ellipse(x + 50, y + 250, 75, 75);
 		}
 		
-		if (hasArrow)
-		{
-			parent.fill(99);
-			parent.rect(x, y + 300, 100, 100);
-			parent.fill(0);
-			parent.ellipse(x + 50,  y + 350, 75, 75);
-			
-			if (arrowIsOn)
-			{
-				parent.fill(60, 234, 66);
-				parent.noStroke();
-				parent.triangle(x + 25, y + 350, x + 45, y + 330, x + 45, y + 370);
-				parent.rect(x + 45, y + 340, 25, 20);
-			}
-		}
+		
 	}
-	
+
 	public int getColor()
 	{
 		return color;
