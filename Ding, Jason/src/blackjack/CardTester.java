@@ -6,12 +6,12 @@ public class CardTester
 	{
 		Card firstCard = new Card("a", "h");
 		System.out.println(firstCard.getCard());
-		System.out.println(firstCard.getNumericValue());
+		System.out.println("Value: " + firstCard.getNumericValue());
 		System.out.println("");
 		
 		Card secondCard = new Card("j", "d");
 		System.out.println(secondCard.getCard());
-		System.out.println(secondCard.getNumericValue());
+		System.out.println("Value: " + secondCard.getNumericValue());
 		System.out.println("");
 		
 		Card thirdCard = new Card("2", "c");
