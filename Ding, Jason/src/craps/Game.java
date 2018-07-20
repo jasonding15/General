@@ -2,17 +2,20 @@ package craps;
 
 public class Game 
 {
-	private double theBet;
+	private double theBet, totalMoney;
 	private boolean isWinner;
 	private int point;
 	private boolean isGameOver;
 	/*
 	 * Bleh bleh instructions
+	 * With how much money are you starting? $1000
+	 * How much are you betting? $50
 	 * "click mouse to roll the dice"
 	 * You rolled a 8
 	 * 8 is your point
 	 * click mouse to roll again
 	 * you rolled a 7, sorry you lose.
+	 * You now have 950 dollars.
 	 */
 	
 	public Game()
@@ -21,6 +24,7 @@ public class Game
 		isWinner = false;
 		isGameOver = false;
 		point = -1;
+		totalMoney = 1000;
 	}
 	
 	
@@ -28,36 +32,85 @@ public class Game
 	{
 		int dieRoll1 = (int) (Math.random() * 6) + 1;
 		int dieRoll2 = (int) (Math.random() * 6) + 1;
+		int sumOfDie = dieRoll1 + dieRoll2;
 		
 		if (point == -1)
 		{
-			if (rollDie() == 7 || rollDie() == 11)
+			if (sumOfDie == 7 || sumOfDie == 11)
 			{
 				isWinner = true;
 				isGameOver = true;
 			}
-			else if (rollDie() == 2 || rollDie() == 3 || rollDie() == 12)
+			else if (sumOfDie == 2 || sumOfDie == 3 || rollDie() == 12)
 			{
 				isWinner = false;
 				isGameOver = true;
 			}
+			else
+			{
+				isGameOver = false;
+				isWinner = false;
+				point = sumOfDie;
+			}
 		}
-		return dieRoll1 + dieRoll2;
+		else
+		{
+			if (sumOfDie == 7)
+			{
+				isWinner = false;
+				isGameOver = true;
+			}
+			else if (sumOfDie == point)
+			{
+				isWinner = true;
+				isGameOver = true;
+			}
+			else
+				isGameOver = false;				
+		}
+		
+		return sumOfDie;
 		
 	}
 	
 	public boolean checkIfGameEnds()
 	{
-		
+		return isGameOver;
 	}
 	
-	public double placeBet(double bet)
+	public int getPoint()
 	{
-		
+		return point;
+	}
+	
+	public void resetGame()
+	{
+		isGameOver = false;
+		isWinner = false;
+		point = -1;
+		theBet = -1;
+	}
+	public void placeBet(double bet)
+	{
+		theBet = bet;
+		totalMoney -= theBet;
 	}
 	
 	public boolean hasWon()
 	{
-		
+		return isWinner;
+	}
+	
+	public double getTotalMoney()
+	{
+		return totalMoney;
+	}
+	
+	public void resolveBets()
+	{
+		if (isWinner)
+		{
+			totalMoney += theBet * 2;
+		}
 	}
 }
