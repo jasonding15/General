@@ -34,9 +34,11 @@ public class PartiallyFilledArray
     // returns the element that was removed
     public double remove(int index)
     {
-        double oldValue = values[index];
-    		values[index] = 0.0;
-    		return oldValue; 
+    		return values[index] = 0.0;
+//        for(int i = index + 1; i < size - 1; i++)
+//        {
+//        		
+//        }
     }
     
     public void insert(int index, double value) 

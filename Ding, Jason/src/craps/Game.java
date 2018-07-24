@@ -24,10 +24,13 @@ public class Game
 		isWinner = false;
 		isGameOver = false;
 		point = -1;
-		totalMoney = 1000;
+		totalMoney = -1;
 	}
 	
-	
+	public void setTotalMoney(double ttalMoney)
+	{
+		totalMoney = ttalMoney;
+	}
 	public int rollDie()
 	{
 		int dieRoll1 = (int) (Math.random() * 6) + 1;
