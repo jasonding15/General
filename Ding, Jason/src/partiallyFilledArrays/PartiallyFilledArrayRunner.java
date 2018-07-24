@@ -1,10 +1,5 @@
 package partiallyFilledArrays;
 
-<<<<<<< HEAD
-=======
-import java.util.Arrays;
-
->>>>>>> branch 'master' of https://github.com/MLHS-AP-CS/jding2.git
 public class PartiallyFilledArrayRunner
 {
     public static void main(String[] args)
