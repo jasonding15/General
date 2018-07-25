@@ -9,6 +9,7 @@ public class GameRunner
 		
 		test.printInstructions();
 		test.gamePlayInterface();
+		test.placeBet();
 		
 		
 

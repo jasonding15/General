@@ -11,6 +11,11 @@ public class Card
 		suit = st.toUpperCase();
 	}
 	
+	public String getValue()
+	{
+		return value;
+	}
+	
 	public String getCard()
 	{
 		return value + suit;
@@ -26,5 +31,14 @@ public class Card
 		else //if (! value.equals("J") && value.equals("Q") && ! value.equals("K"))
 			totalValue += Integer.parseInt(value);
 		return totalValue;
+	}
+	
+	public String toString()
+	{
+		String card = "";
+		card += value;
+		card += suit;
+		
+		return card;
 	}
 }

@@ -34,10 +34,12 @@ public class UserInterface {
 		System.out.println("");
 		System.out.print("With how much money are you starting? (minimum of $50 to play): ");
 		totalMoney = fromKeyboard.nextDouble();
+		fromKeyboard.nextLine();
 		while (totalMoney < 50)
 		{
 			System.out.print("Do yOU eVEn WAnT tO PlaY? With how much money are you starting? (Sorry if you're broke, but you must have at least $50 to play): ");
 			totalMoney = fromKeyboard.nextDouble();
+			fromKeyboard.nextLine();
 		}
 		craps.setTotalMoney(totalMoney);
 	}
@@ -46,31 +48,29 @@ public class UserInterface {
 	{
 		System.out.print("Please place a bet of at least $25: ");
 		double bet = fromKeyboard.nextDouble();
+		fromKeyboard.nextLine();
+		craps.placeBet(bet);
 		while(bet < 25 || bet > totalMoney)
 		{
-			System.out.println("Please place a bet of above $25 that you are capable of paying! How much are you betting?: ");
+			System.out.print("Please place a bet of above $25 that you are capable of paying! How much are you betting?: ");
 			bet = fromKeyboard.nextDouble();
+			fromKeyboard.nextLine();
+			craps.placeBet(bet);
 		}
 	}
 	
-	public int sum67(int[] nums) 
+	public void rollDice()
 	{
-	  int total = 0;
-	  boolean yes = true;
-	 
-	  for(int i = 0; i < nums.length; i++)
-	  {
-	    if (nums[i] == 6)
-	      yes = false;
-	    
-	    if (nums[i]) != 7 && yes == false)
-	      yes = true;
-	    
-	    while(yes)
-	      total += nums[i];
-	  }
-	  
-	  return total;
+		System.out.println("Now, please press the space bar to roll the dice!");
+		String answer = fromKeyboard.nextLine();
+		fromKeyboard.nextLine();
+		while( ! answer.equals(" ") )
+		{
+			System.out.print("Bruh people be waitin for you. Please roll the dice by pressing space already!: ");
+			answer = fromKeyboard.nextLine();
+			fromKeyboard.nextLine()
+		}
 	}
-
+	
+	
 }
