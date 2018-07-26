@@ -33,14 +33,22 @@ public class Hand
 		return totalSum;
 	}
 	
+	public boolean isBlackjack()
+	{
+		if(getNumericValue() == 21 && cardArray.size() == 2)
+			return true;
+		else
+			return false;
+	}
+	
 	public String toString()
 	{
 		String formattedHand = "";
 		for(int i = 0; i < cardArray.size(); i++)
 		{
-			formattedHand += cardArray.get(i).getCard() + "\t";
-//			formattedHand += cardArray.get(i).getCard();
+			formattedHand += cardArray.get(i).getCard() + " ";
 		}
+		formattedHand += "(" + getNumericValue() + ")";
 		
 		return formattedHand;
 	}

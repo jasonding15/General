@@ -6,13 +6,11 @@ public class UserInterface {
 
 	private Scanner fromKeyboard;
 	private Game craps;
-	private double totalMoney;
 	
 	public UserInterface()
 	{
 		fromKeyboard = new Scanner(System.in);
 		craps = new Game();
-		totalMoney = -1;
 	}
 
 	public void printInstructions()
@@ -29,12 +27,13 @@ public class UserInterface {
 		
 	}
 	
-	public void gamePlayInterface()
+	public void setTotalMoney()
 	{
 		System.out.println("");
 		System.out.print("With how much money are you starting? (minimum of $50 to play): ");
-		totalMoney = fromKeyboard.nextDouble();
+		double totalMoney = fromKeyboard.nextDouble();
 		fromKeyboard.nextLine();
+		
 		while (totalMoney < 50)
 		{
 			System.out.print("Do yOU eVEn WAnT tO PlaY? With how much money are you starting? (Sorry if you're broke, but you must have at least $50 to play): ");
@@ -44,13 +43,18 @@ public class UserInterface {
 		craps.setTotalMoney(totalMoney);
 	}
 	
+	public void playOneRound()
+	{
+		placeBet();
+	}
+	
 	public void placeBet()
 	{
 		System.out.print("Please place a bet of at least $25: ");
 		double bet = fromKeyboard.nextDouble();
 		fromKeyboard.nextLine();
 		craps.placeBet(bet);
-		while(bet < 25 || bet > totalMoney)
+		while(bet < 25 || bet > craps.getTotalMoney())
 		{
 			System.out.print("Please place a bet of above $25 that you are capable of paying! How much are you betting?: ");
 			bet = fromKeyboard.nextDouble();
@@ -61,16 +65,44 @@ public class UserInterface {
 	
 	public void rollDice()
 	{
-		System.out.println("Now, please press the space bar to roll the dice!");
+		System.out.print("Now, please press the space bar to roll the dice!");
 		String answer = fromKeyboard.nextLine();
-		fromKeyboard.nextLine();
+		
 		while( ! answer.equals(" ") )
 		{
 			System.out.print("Bruh people be waitin for you. Please roll the dice by pressing space already!: ");
 			answer = fromKeyboard.nextLine();
-			fromKeyboard.nextLine()
+		}
+		int sum = craps.rollDie();
+		point = sum;
+		System.out.println("You rolled a total of " + sum + "!");
+		
+		if(craps.checkIfGameEnds())
+		{
+			System.out.println("Game over!");
+			if (craps.hasWon())
+				System.out.println("You won! You now have $" + craps.getTotalMoney() + "!");
+			else 
+				System.out.println("You lost! You now have $" + craps.getTotalMoney() + ". Better luck next time!");
+		}
+		else
+		{
+			gameContinues();
 		}
 	}
 	
-	
+	public void gameContinues()
+	{
+		System.out.println(point + " is now your point. Press the space bar to roll again!: ");
+		String answer = fromKeyboard.nextLine();
+		
+		while (! answer.equals(" "))
+		{
+			System.out.println("Please press the space to roll the dice NOW!: ");
+			answer = fromKeyboard.nextLine();
+		}
+		int newRoll = craps.rollDie();
+		
+		
+	}
 }

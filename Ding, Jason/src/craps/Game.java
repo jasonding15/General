@@ -44,7 +44,7 @@ public class Game
 				isWinner = true;
 				isGameOver = true;
 			}
-			else if (sumOfDie == 2 || sumOfDie == 3 || rollDie() == 12)
+			else if (sumOfDie == 2 || sumOfDie == 3 || sumOfDie== 12)
 			{
 				isWinner = false;
 				isGameOver = true;
