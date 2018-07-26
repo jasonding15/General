@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-public class YorthoSorting {
+public class SelectionSort {
 
 	public static void main(String[] args) 
 	{
