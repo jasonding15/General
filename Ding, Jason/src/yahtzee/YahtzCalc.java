@@ -51,7 +51,7 @@ public class YahtzCalc
 		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		for(int i = 0; i < numberOfTimes.length; i++)
 		{
-			if (numberOfTimes[i] == 3)
+			if (numberOfTimes[i] >= 3)
 				return 1 * numberOfTimes[0] + 2 * numberOfTimes[1] + 3 * numberOfTimes[2] + 4 * numberOfTimes[3] + 5 * numberOfTimes[4] + 6 * numberOfTimes[5];
 		}
 		
@@ -63,7 +63,7 @@ public class YahtzCalc
 		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		for(int i = 0; i < numberOfTimes.length; i++)
 		{
-			if (numberOfTimes[i] == 4)
+			if (numberOfTimes[i] >= 4)
 				return 1 * numberOfTimes[0] + 2 * numberOfTimes[1] + 3 * numberOfTimes[2] + 4 * numberOfTimes[3] + 5 * numberOfTimes[4] + 6 * numberOfTimes[5];
 		}
 		
