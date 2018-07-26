@@ -1,22 +1,22 @@
 package blackjack;
 
+import java.util.ArrayList;
+
 public class Hand 
 {
-	private Card[] cardArray;
+	private ArrayList<Card> cardArray;
 	private int numCards;
 	
 	public Hand(Card firstCard, Card secondCard)
 	{
-		cardArray = new Card[15];
-		cardArray[0] = firstCard;
-		cardArray[1] = secondCard;
-		numCards = 2;
+		cardArray = new ArrayList<Card>();
+		cardArray.add(firstCard);
+		cardArray.add(secondCard);
 	}
 	
 	public void addCard(Card newCard)
 	{
-		cardArray[numCards] = newCard;
-		numCards++;
+		cardArray.add(newCard);
 	}
 	
 	public int getNumericValue()
@@ -25,8 +25,8 @@ public class Hand
 		boolean hasAce = false;
 		for(int i = 0; i < numCards; i++)
 		{
-			totalSum += cardArray[i].getNumericValue();
-			if( cardArray[i].getValue().equals("A"))
+			totalSum += cardArray.get(i).getNumericValue();
+			if( cardArray.get(i).getValue().equals("A"))
 				hasAce = true;
 		}
 		if(hasAce && totalSum <= 11)
@@ -39,7 +39,7 @@ public class Hand
 		String formattedHand = " ";
 		for(int i = 0; i <= numCards; i++)
 		{
-			formattedHand += cardArray[i].getCard() + "\t";
+			formattedHand += cardArray.get(i).getCard() + "\t";
 		}
 		
 		return formattedHand;
