@@ -7,17 +7,18 @@ public class YahtzCalc
 
 	public static void main(String[] args) 
 	{
-		int[] fiveRolls = {4, 3, 2, 4, 5};
+		int[] fiveRolls = {4, 3, 4, 4, 3};
 //		System.out.println(sumWithValue(5, fiveRolls));
 //		System.out.println(Arrays.toString(countNumberOfTimes(fiveRolls)));
-		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
-		System.out.println(Arrays.toString(numberOfTimes));
+//		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
+//		System.out.println(Arrays.toString(numberOfTimes));
 //		System.out.println(calcThreeOfAKind(numberOfTimes));
 //		System.out.println(calcFourOfAKind(numberOfTimes));
 //		System.out.println(calcChance(fiveRolls));
 //		System.out.println(calcYahtzee(fiveRolls));
 //		System.out.println(calcLargeStraight(numberOfTimes));
-		System.out.println(calcSmallStraight(numberOfTimes));
+//		System.out.println(calcSmallStraight(numberOfTimes));
+		System.out.println(calcFullHouse(fiveRolls));
 
 	}
 	
@@ -45,8 +46,9 @@ public class YahtzCalc
 		return numberOfTimes;
 	}
 	
-	public static int calcThreeOfAKind(int[] numberOfTimes)
+	public static int calcThreeOfAKind(int[] fiveRolls)
 	{
+		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		for(int i = 0; i < numberOfTimes.length; i++)
 		{
 			if (numberOfTimes[i] == 3)
@@ -56,8 +58,9 @@ public class YahtzCalc
 		return 0;
 	}
 	
-	public static int calcFourOfAKind(int[] numberOfTimes)
+	public static int calcFourOfAKind(int[] fiveRolls)
 	{
+		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		for(int i = 0; i < numberOfTimes.length; i++)
 		{
 			if (numberOfTimes[i] == 4)
@@ -69,11 +72,25 @@ public class YahtzCalc
 	
 	public static int calcFullHouse(int[] fiveRolls)
 	{
-		//25
+		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
+		boolean is2 = false, is3 = false;
+		for(int i = 0; i < numberOfTimes.length; i++)
+		{
+			if(numberOfTimes[i] == 3)
+				is3 = true;
+			if(numberOfTimes[i] == 2)
+				is2 = true;
+		}
+		
+		if(is3 && is2)
+			return 25;
+		else 
+			return 0;
 	}
 
-	public static int calcSmallStraight(int[] numberOfTimes)
+	public static int calcSmallStraight(int[] fiveRolls)
 	{
+		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		if (numberOfTimes[0] >= 1 && numberOfTimes[1] >= 1 && numberOfTimes[2] >= 1 && numberOfTimes[3] >= 1)
 			return 30;
 		else if (numberOfTimes[1] >= 1 && numberOfTimes[2] >= 1 && numberOfTimes[3] >= 1 && numberOfTimes[4] >= 1)
@@ -85,8 +102,9 @@ public class YahtzCalc
 		//30
 	}
 	
-	public static int calcLargeStraight(int[] numberOfTimes)
+	public static int calcLargeStraight(int[] fiveRolls)
 	{
+		int[] numberOfTimes = countNumberOfTimes(fiveRolls);
 		if (numberOfTimes[0] == 1 && numberOfTimes[1] == 1 && numberOfTimes[2] == 1 && numberOfTimes[3] == 1 && numberOfTimes[4] == 1)
 			return 40;
 		else if (numberOfTimes[5] == 1 && numberOfTimes[1] == 1 && numberOfTimes[2] == 1 && numberOfTimes[3] == 1 && numberOfTimes[4] == 1)
