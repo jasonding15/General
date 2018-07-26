@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Hand 
 {
 	private ArrayList<Card> cardArray;
-	private int numCards;
 	
 	public Hand(Card firstCard, Card secondCard)
 	{
@@ -23,7 +22,7 @@ public class Hand
 	{
 		int totalSum = 0;
 		boolean hasAce = false;
-		for(int i = 0; i < numCards; i++)
+		for(int i = 0; i < cardArray.size(); i++)
 		{
 			totalSum += cardArray.get(i).getNumericValue();
 			if( cardArray.get(i).getValue().equals("A"))
@@ -36,10 +35,11 @@ public class Hand
 	
 	public String toString()
 	{
-		String formattedHand = " ";
-		for(int i = 0; i <= numCards; i++)
+		String formattedHand = "";
+		for(int i = 0; i < cardArray.size(); i++)
 		{
 			formattedHand += cardArray.get(i).getCard() + "\t";
+//			formattedHand += cardArray.get(i).getCard();
 		}
 		
 		return formattedHand;
