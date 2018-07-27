@@ -31,6 +31,7 @@ public class Game
 	{
 		totalMoney = ttalMoney;
 	}
+	
 	public int rollDie()
 	{
 		int dieRoll1 = (int) (Math.random() * 6) + 1;
@@ -38,42 +39,48 @@ public class Game
 		int sumOfDie = dieRoll1 + dieRoll2;
 		
 		if (point == -1)
-		{
-			if (sumOfDie == 7 || sumOfDie == 11)
-			{
-				isWinner = true;
-				isGameOver = true;
-			}
-			else if (sumOfDie == 2 || sumOfDie == 3 || sumOfDie== 12)
-			{
-				isWinner = false;
-				isGameOver = true;
-			}
-			else
-			{
-				isGameOver = false;
-				isWinner = false;
-				point = sumOfDie;
-			}
-		}
+			handleFirstRoll(sumOfDie);
 		else
-		{
-			if (sumOfDie == 7)
-			{
-				isWinner = false;
-				isGameOver = true;
-			}
-			else if (sumOfDie == point)
-			{
-				isWinner = true;
-				isGameOver = true;
-			}
-			else
-				isGameOver = false;				
-		}
+			handleSubsequentRolls(sumOfDie);
 		
 		return sumOfDie;
 		
+	}
+
+	private void handleFirstRoll(int sumOfDie) 
+	{
+		if (sumOfDie == 7 || sumOfDie == 11)
+		{
+			isWinner = true;
+			isGameOver = true;
+		}
+		else if (sumOfDie == 2 || sumOfDie == 3 || sumOfDie== 12)
+		{
+			isWinner = false;
+			isGameOver = true;
+		}
+		else
+		{
+			isGameOver = false;
+			isWinner = false;
+			point = sumOfDie;
+		}
+	}
+
+	private void handleSubsequentRolls(int sumOfDie) 
+	{
+		if (sumOfDie == 7)
+		{
+			isWinner = false;
+			isGameOver = true;
+		}
+		else if (sumOfDie == point)
+		{
+			isWinner = true;
+			isGameOver = true;
+		}
+		else
+			isGameOver = false;
 	}
 	
 	public boolean checkIfGameEnds()
@@ -86,6 +93,11 @@ public class Game
 		return point;
 	}
 	
+	public void setPoint( int pont)
+	{
+		point = pont;
+	}
+	
 	public void resetGame()
 	{
 		isGameOver = false;
@@ -93,6 +105,7 @@ public class Game
 		point = -1;
 		theBet = -1;
 	}
+	
 	public void placeBet(double bet)
 	{
 		theBet = bet;
@@ -116,4 +129,5 @@ public class Game
 			totalMoney += theBet * 2;
 		}
 	}
+	
 }

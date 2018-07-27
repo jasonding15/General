@@ -8,9 +8,11 @@ public class GameRunner
 		UserInterface test = new UserInterface();
 		
 		test.printInstructions();
-		test.gamePlayInterface();
-		test.placeBet();
-		test.rollDice();
+		test.setTotalMoney();
+		test.playUntilQuit();
+//		test.playOneRound();
+//		test.placeBet();
+//		test.rollDice();
 		
 		
 
