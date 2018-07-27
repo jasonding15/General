@@ -144,9 +144,4 @@ public class UserInterface {
 		
 		System.out.println("Thanks for playing!");
 	}
-	
-	public void askToPlay()
-	{
-		
-	}
 }
