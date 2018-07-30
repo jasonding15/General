@@ -6,14 +6,14 @@ public class ShoeTester {
 
 	public static void main(String[] args) 
 	{
-		OldShoe testShoe = new OldShoe(6);
-		testShoe.shuffleShoe();
+		Shoe testShoe = new Shoe(6);
+//		testShoe.reset();
 		System.out.println(testShoe.toString());
-		System.out.println(testShoe.giveCard());
-		System.out.println(testShoe.getShoeSize());
+		System.out.println(testShoe.dealCard());
+		System.out.println(testShoe.cardsLeft());
 		System.out.println(testShoe.toString());
-		System.out.println(testShoe.giveCard());
-		System.out.println(testShoe.getShoeSize());
+		System.out.println(testShoe.dealCard());
+		System.out.println(testShoe.cardsLeft());
 		System.out.println(testShoe.toString());
 	}
 

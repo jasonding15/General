@@ -1,6 +1,7 @@
 package blackjack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -20,6 +21,9 @@ public class Shoe
     public Shoe(int decks)
     {
         this.decks = decks;
+        cards = new ArrayList<Card>();
+        reset();
+
     }
     
     /**
@@ -54,6 +58,8 @@ public class Shoe
     
     private void createShoe()
     {
+    		cards.clear();
+    	
     		String[] suits = {"S", "C", "H", "D"};
     		String[] faceCards = {"A", "K", "Q", "J"};
     		for(int i = 1; i <= decks; i++)
@@ -82,4 +88,10 @@ public class Shoe
 			Collections.swap(cards, i, randomNum);
 		}
     }
+
+    public String toString()
+    {
+    		return cards.toString();
+    }
 }
+
