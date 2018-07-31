@@ -1,7 +1,5 @@
 package blackjack;
 
-import java.util.Arrays;
-
 public class ShoeTester {
 
 	public static void main(String[] args) 

@@ -1,7 +1,5 @@
 package blackjack;
 
-import java.util.ArrayList;
-
 /**
  * The Blackjack class allows a single player to play a game of blackjack.
  * The class tracks the player's bankroll but makes no attempt to prevent
@@ -29,8 +27,9 @@ public class Blackjack
     public Blackjack(double playersMoney)
     {
 	    	this.playersMoney = playersMoney;
-	    	reset();
 	    	shoe = new Shoe(6);
+	    	reset();
+	    	
     }
     
     /**
@@ -61,7 +60,7 @@ public class Blackjack
      */
     public double getPlayersBet()
     {
-        return playersBet; // TODO: implement
+        return playersBet;
     }
     
     /**
@@ -71,6 +70,7 @@ public class Blackjack
     public void placeBetAndDealCards(double amount)
     {
         playersBet = amount;
+        playersMoney -= playersBet;
         Card card1 = shoe.dealCard();
         Card card2 = shoe.dealCard();
         Card card3 = shoe.dealCard();
@@ -127,7 +127,8 @@ public class Blackjack
      */
     public void playDealersHand()
     {
-        // TODO: implement
+        while (dealersHand.getNumericValue() < 17)
+        		dealersHand.addCard(shoe.dealCard());
     }
     
     /**
@@ -136,7 +137,13 @@ public class Blackjack
      */
     public boolean isPush()
     {
-        return false; // TODO: implement
+    		if (playersHand.isBlackjack() && ! dealersHand.isBlackjack())
+    			return false;
+    		else if (dealersHand.isBlackjack() && ! playersHand.isBlackjack())
+    			return false;
+    		else if (playersHand.getNumericValue() == dealersHand.getNumericValue())
+        		return true;
+    		return false;
     }
     
     /**
@@ -145,7 +152,17 @@ public class Blackjack
      */
     public boolean isPlayerWin()
     {
-        return false; // TODO: implement
+    		if (playersHand.getNumericValue() > 21)
+    			return false;
+    		else if (playersHand.isBlackjack() && ! dealersHand.isBlackjack())
+    			return true;
+    		else if (dealersHand.isBlackjack() && ! playersHand.isBlackjack())
+    			return false;
+    		else if (dealersHand.getNumericValue() > 21 && playersHand.getNumericValue() <= 21)
+    			return true;
+    		else if (playersHand.getNumericValue() > dealersHand.getNumericValue())
+    			return true;
+	return false;
     }
     
     /**
@@ -156,7 +173,9 @@ public class Blackjack
      */
     public boolean isPlayerBlackjack()
     {
-        return false; // TODO: implement
+    		if (playersHand.isBlackjack() && ! dealersHand.isBlackjack())
+    			return true;
+    		return false; 
     }
     
     /**
@@ -165,6 +184,12 @@ public class Blackjack
      */
     public void resolveBetsAndReset()
     {
-        // TODO: implement
+        if (isPlayerBlackjack())
+        		playersMoney += playersBet * 2.5;
+        else if (isPlayerWin())
+        		playersMoney += playersBet * 2;
+        else if (isPush())
+        		playersMoney += playersBet;
+        
     }
 }
