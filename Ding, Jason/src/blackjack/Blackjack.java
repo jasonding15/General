@@ -104,11 +104,10 @@ public class Blackjack
      */
     public boolean canHit()
     {
-        if (playersHand.getNumericValue() < 21)
+    	 	if(dealersHand.isBlackjack() || playersHand.isBlackjack())
+ 			return false;
+    	 	else if (playersHand.getNumericValue() < 21)
         		return true;
-        else if(dealersHand.isBlackjack() || playersHand.isBlackjack())
-    			return false;
-        
         return false;
     }
     

@@ -11,12 +11,15 @@ public class BlackjackRunner
 		System.out.println("Players: " + oneRound.getPlayersHand());
 		System.out.println("Dealers: " + oneRound.getDealersHand());
 		System.out.println(oneRound.isPlayerBlackjack());
-//		oneRound.hit();
-//		System.out.println("Hit: " + oneRound.getPlayersHand());
-//		oneRound.hit();
-//		System.out.println(oneRound.getPlayersHand());
-//		oneRound.playDealersHand();
-//		System.out.println(oneRound.getDealersHand());
+		System.out.println("Can Hit: " + oneRound.canHit());
+
+		oneRound.hit();
+		System.out.println("Hit: " + oneRound.getPlayersHand());
+		System.out.println("Can Hit: " + oneRound.canHit());
+		oneRound.hit();
+		System.out.println(oneRound.getPlayersHand());
+		oneRound.playDealersHand();
+		System.out.println(oneRound.getDealersHand());
 		
 		System.out.println(oneRound.isPlayerWin());
 		oneRound.resolveBetsAndReset();
