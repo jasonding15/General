@@ -106,7 +106,7 @@ public class Blackjack
     {
         if (playersHand.getNumericValue() < 21)
         		return true;
-        else if(dealersHand.getNumericValue() == 21)
+        else if(dealersHand.isBlackjack() || playersHand.isBlackjack())
     			return false;
         
         return false;
