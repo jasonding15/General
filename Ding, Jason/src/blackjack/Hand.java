@@ -13,6 +13,11 @@ public class Hand
 		cardArray.add(secondCard);
 	}
 	
+	public Card getFirstCard()
+	{
+		return cardArray.get(0);
+	}
+	
 	public void addCard(Card newCard)
 	{
 		cardArray.add(newCard);

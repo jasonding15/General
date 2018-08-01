@@ -77,6 +77,13 @@ public class Shoe
     				}			
 			}
 		}
+//    		cards = new ArrayList<Card>();
+//    		cards.add(new Card("A", "S"));
+//    		cards.add(new Card("Q", "D"));
+//    		cards.add(new Card("4", "C"));
+//    		cards.add(new Card("5", "H"));
+//    		cards.add(new Card("4", "S"));
+//    		cards.add(new Card("4", "S"));
     }
     
     private void shuffleShoe()

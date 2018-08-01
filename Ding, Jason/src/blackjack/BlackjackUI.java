@@ -46,7 +46,41 @@ public class BlackjackUI
     public void playHand()
     {
     		playPlayersHand();
+    		if (bj.getPlayersHand().getNumericValue() <= 21)
+    		{
+    			bj.playDealersHand();
+    			System.out.println("Dealer's hand: " + bj.getDealersHand());
+    		}
+    		else
+    			System.out.println("You busted!");
+    		
+    		resolveHand();	
     }
+
+	private void resolveHand() 
+	{
+		if(bj.isPush())
+		{
+			System.out.println("You tied with the dealer. You get your bet back.");
+			bj.resolveBetsAndReset();
+			System.out.println("You now have $" + bj.getPlayersMoney());
+		}
+		else if(bj.isPlayerWin())
+		{
+			if(bj.isPlayerBlackjack())
+				System.out.println("Blackjack! You win!");
+			
+			System.out.println("You win!");
+			bj.resolveBetsAndReset();
+			System.out.println("You now have $" + bj.getPlayersMoney());
+		}
+		else if(! bj.isPlayerWin())
+		{
+			System.out.println("You lose. Better luck next time!");
+			bj.resolveBetsAndReset();
+			System.out.println("You now have $" + bj.getPlayersMoney());
+		}
+	}
     
     /**
      * Plays blackjack hands until the user chooses to quit
@@ -65,16 +99,19 @@ public class BlackjackUI
 		boolean wantsToHit = true;
 		bj.placeBetAndDealCards(getValidBet());
 		System.out.println("Your cards are: " + bj.getPlayersHand() + ".");
+		System.out.println("The dealer has a " + bj.getDealersHand().getFirstCard());
+		
 		while(bj.canHit() && wantsToHit)
 		{
 			System.out.print("Please press 'h' to hit and anything else to stand: ");
 			String ans = fromKeyboard.nextLine();
 			ans = ans.toUpperCase();
-			while (! ans.equals("H") && ! ans.equals("S"))
-			{
-				System.out.print("Please hit or stand, kind sir. We do not have all day. Press h or s please to hit or stand, respectively: ");
-				ans = fromKeyboard.nextLine();
-			}
+//			while (! ans.equals("H") && ! ans.equals("S"))
+//			{
+//				System.out.print("Please hit or stand, kind sir. We do not have all day. Press h or s please to hit or stand, respectively: ");
+//				ans = ans.toUpperCase();
+//				ans = fromKeyboard.nextLine();
+//			}
 			if (ans.equals("H"))
 			{
 				bj.hit();
@@ -86,28 +123,6 @@ public class BlackjackUI
 				wantsToHit = false;
 			}
 		}
-		
-		
-		if(bj.isPlayerWin())
-		{
-			if(bj.isPlayerBlackjack())
-				System.out.println("Blackjack! You win!");
-			
-			System.out.println("You win!");
-			bj.resolveBetsAndReset();
-			System.out.println(bj.getPlayersMoney());
-		}
-		else if(! bj.isPlayerWin())
-		{
-			System.out.println("You lose. Better luck next time!");
-			bj.resolveBetsAndReset();
-			System.out.println(bj.getPlayersMoney());
-		}
-	
-		else if(bj.isPush())
-			System.out.println("You tied with the dealer. You get your bet back.");
-			
-		
 	}
 
 	/**
