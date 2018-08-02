@@ -20,6 +20,7 @@ public class BlackjackUI
 	{
 	    bj = new Blackjack(1000);
 	    fromKeyboard = new Scanner(System.in);
+	    nf = NumberFormat.getCurrencyInstance();
 	}
 	
 	/**
@@ -28,10 +29,10 @@ public class BlackjackUI
      */
     private double getValidBet()
     {
-        System.out.print("Please place a bet (at least $20 to play): ");
+        System.out.print("Please place a bet you are capable of paying (at least $20 to play): ");
         int bet = fromKeyboard.nextInt();
         fromKeyboard.nextLine();
-        while (bet < 20)
+        while (bet < 20 || bet > bj.getPlayersMoney())
         {
         		System.out.print("Please bet at least 20 bucks to play, AIGHT CUH?: ");
         		bet = fromKeyboard.nextInt();
@@ -63,7 +64,7 @@ public class BlackjackUI
 		{
 			System.out.println("You tied with the dealer. You get your bet back.");
 			bj.resolveBetsAndReset();
-			System.out.println("You now have $" + bj.getPlayersMoney());
+			System.out.println("You now have " + nf.format(bj.getPlayersMoney()));
 		}
 		else if(bj.isPlayerWin())
 		{
@@ -72,13 +73,13 @@ public class BlackjackUI
 			
 			System.out.println("You win!");
 			bj.resolveBetsAndReset();
-			System.out.println("You now have $" + bj.getPlayersMoney());
+			System.out.println("You now have " + nf.format(bj.getPlayersMoney()));
 		}
 		else if(! bj.isPlayerWin())
 		{
 			System.out.println("You lose. Better luck next time!");
 			bj.resolveBetsAndReset();
-			System.out.println("You now have $" + bj.getPlayersMoney());
+			System.out.println("You now have " + nf.format(bj.getPlayersMoney()));
 		}
 	}
     
@@ -87,7 +88,34 @@ public class BlackjackUI
      */
     public void playHandsUntilQuit()
     {
-        // TODO: implement
+        playHand();
+        
+        boolean wannaPlayAgain = false;
+        if (bj.getPlayersMoney() >= 20)
+        {
+        		System.out.print("Do you want to play again (y/n) ?: ");
+        		String answer = fromKeyboard.nextLine();
+        		answer = answer.toUpperCase();
+        		if (answer.equals("Y"))
+        			wannaPlayAgain = true;
+        }
+        
+        while (wannaPlayAgain)
+        {
+        		playHand();
+        		wannaPlayAgain = false;
+        		if (bj.getPlayersMoney() >= 20)
+        		{
+        			System.out.print("Do you want to play again (y/n) ?: ");
+        			String answer = fromKeyboard.nextLine();
+        			answer = answer.toUpperCase();
+        			if (answer.equals("Y"))
+        				wannaPlayAgain = true;	
+        		}
+        }
+        
+        if (! wannaPlayAgain)
+			System.out.println("Thanks for playing! You end with " + nf.format(bj.getPlayersMoney()));
     }
 
     /**
@@ -106,12 +134,7 @@ public class BlackjackUI
 			System.out.print("Please press 'h' to hit and anything else to stand: ");
 			String ans = fromKeyboard.nextLine();
 			ans = ans.toUpperCase();
-//			while (! ans.equals("H") && ! ans.equals("S"))
-//			{
-//				System.out.print("Please hit or stand, kind sir. We do not have all day. Press h or s please to hit or stand, respectively: ");
-//				ans = ans.toUpperCase();
-//				ans = fromKeyboard.nextLine();
-//			}
+
 			if (ans.equals("H"))
 			{
 				bj.hit();

@@ -8,7 +8,8 @@ public class BlackjackRunner
 //		Blackjack oneRound = new Blackjack(1000);
 		BlackjackUI oneRound = new BlackjackUI();
 		
-		oneRound.playHand();
+//		oneRound.playHand();
+		oneRound.playHandsUntilQuit();
 		
 //		oneRound.placeBetAndDealCards(50);
 //		System.out.println("Players: " + oneRound.getPlayersHand());
