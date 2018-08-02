@@ -2,11 +2,16 @@ package substitutionCipher;
 
 public class SubstitutionCipher 
 {
+	/*
+	 * 
+	 */
 	private String encryptedMessage;
+	private double[] percentArray;
 	
 	public SubstitutionCipher(String encryptedMessage)
 	{
 		this.encryptedMessage = encryptedMessage;
+		percentArray = new double[26];
 	}
 	
 	public int[] countLetters()
@@ -33,12 +38,26 @@ public class SubstitutionCipher
 		{
 			totalCount += letterCount[a];
 		}
-		double[] percentCount = new double[26];
-		for (int i = 0; i < percentCount.length; i++)
+
+		for (int i = 0; i < percentArray.length; i++)
 		{
-			percentCount[i] = letterCount[i] / totalCount;
+			percentArray[i] = letterCount[i] / totalCount;
+			percentArray[i] = ((int) (percentArray[i] * 1000)) / 1000.0;
 		}
-		return percentCount;
+		return percentArray;
+	}
+	public void formatTable()
+	{
+		System.out.println("Letter number\tPercentage");
+		System.out.println("-------------------------");
+		char letter = 'A';
+		for(int i = 0; i < percentArray.length; i++)
+		{
+			System.out.println("|   " +  letter + " \t| \t" + percentArray[i] + "\t|");
+//			System.out.println("|   " +  letter + " \t| \t" + (int) (percentArray[i] * 100) + "%\t|");
+			System.out.println("-------------------------");
+			letter++;
+		}
 	}
 
 }
