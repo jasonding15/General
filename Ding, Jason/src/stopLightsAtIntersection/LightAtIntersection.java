@@ -15,51 +15,51 @@ public class LightAtIntersection
 		y = why;
 		color = clr;
 		hasArrow = arrow;
-		arrowIsOn = true;
+		arrowIsOn = false;
 	}
 	
 	public void drawSelf()
 	{
 		parent.fill(99);
-		parent.rect(x, y, 100, 300);
+		parent.rect(x, y, 50, 150);
 	
-		parent.fill(0);
-		parent.ellipse(x + 50, y + 50, 75, 75);
-		parent.ellipse(x + 50, y + 150, 75, 75);
-		parent.ellipse(x + 50, y + 250, 75, 75);
-	
+		parent.fill(50);
+		parent.ellipse(x + 25, y + 25, 38, 38);
+		parent.ellipse(x + 25, y + 75, 38, 38);
+		parent.ellipse(x + 25, y + 125, 38, 38);
+		parent.noStroke();
+
 		if (hasArrow)
 		{
 			parent.fill(99);
-			parent.rect(x, y + 300, 100, 100);
-			parent.fill(0);
-			parent.ellipse(x + 50,  y + 350, 75, 75);
+			parent.rect(x, y + 150, 50, 50);
+			parent.fill(50);
+			parent.ellipse(x + 25,  y + 175, 38, 38);
 			
 			if (arrowIsOn)
 			{
 				parent.fill(60, 234, 66);
-				parent.noStroke();
-				parent.triangle(x + 25, y + 350, x + 45, y + 330, x + 45, y + 370);
-				parent.rect(x + 45, y + 340, 25, 20);
+				parent.triangle(x + 13, y + 175, x + 23, y + 165, x + 23, y + 185);
+				parent.rect(x + 23, y + 170, 13, 10);
 			}
 		}
 		
 		if (color == 1)
 		{
 			parent.fill(255, 0, 0);
-			parent.ellipse(x + 50,  y + 50,  75,  75);
+			parent.ellipse(x + 25,  y + 25,  38, 38);
 		}
 
 		if (color == 2)
 		{
 			parent.fill(255, 252, 102);
-			parent.ellipse(x + 150,  y + 150,  175, 75);
+			parent.ellipse(x + 25,  y + 75,  38, 38);
 		}
 	
 		if (color == 3)
 		{
 			parent.fill(60, 234, 66);
-			parent.ellipse(x + 50, y + 250, 75, 75);
+			parent.ellipse(x + 25, y + 125, 38, 38);
 		}
 		
 		
@@ -70,6 +70,14 @@ public class LightAtIntersection
 		return color;
 	}
 	
+	public void changeStateOfArrow()
+	{
+		arrowIsOn = ! arrowIsOn;
+	}
+	public boolean getStateOfArrow()
+	{
+		return arrowIsOn;
+	}
 	public void changeColor()
 	{
 		color--;
