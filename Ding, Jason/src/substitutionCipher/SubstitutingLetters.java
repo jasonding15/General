@@ -3,15 +3,26 @@ package substitutionCipher;
 public class SubstitutingLetters 
 {
 	private String encodedString;
-	private String[] mappings;
+	private char[] mappings;
+	private char[] alphabet;
 	
 	public SubstitutingLetters(String encodedString)
 	{
-		this.encodedString = encodedString;
-		mappings = new String[26];
+		this.encodedString = encodedString.toUpperCase();
+		mappings = new char[26];
+		alphabet = new char[26];
+		char letter = 'A';
+		for (int i = 0; i < mappings.length; i++)
+		{
+			
+			mappings[i] = '-';
+			alphabet[i] = letter;
+			letter++;
+		}
+		
 	}
 	
-	public void map (char original, String newLetter)
+	public void map (char original, char newLetter)
 	{
 		/*
 		 * SL sl = new SubstitutingLetters("jason")
@@ -24,28 +35,41 @@ public class SubstitutingLetters
 		 * every time you come across the original character, replace with newLetter, which is uppercase
 		 *
 		 */
-		int unicode = original;
+		original = Character.toUpperCase(original);
+		int unicode = original - 'A';
 		mappings[unicode] = newLetter;
 	}
 	
-	public String getModifiedString(String original, String newLetter)
+	public char[] getMappings()
 	{
-		String modifiedString = encodedString;
-		for(int i = 0; i < modifiedString.length(); i++)
+		return mappings;
+	}
+	
+	public String getModifiedString()
+	{
+		String modifiedString = "";
+		for(int i = 0; i < encodedString.length(); i++)
 		{
-			if(modifiedString.substring(i, i + 1) .equals(original))
-			{
-//				Character.toUpperCase(newLetter);
-				modifiedString.replace(original, newLetter);
+			if (encodedString.charAt(i) >= 'A' && encodedString.charAt(i) <= 'Z')
+			{	
+				int un = encodedString.charAt(i) - 'A';
+				char newLetter = Character.toUpperCase(mappings[un]);
+				if (newLetter == '-')
+					modifiedString += "_";
+				else
+				{
+					modifiedString += newLetter;
+				}
 			}
-				
+			else
+			{
+				modifiedString += " ";
+			}
 		}
 		return modifiedString;
 	}
-	
-//	public void mapping()
-//	{
-//		String [] mappings = new String[26];
-//		
-//	}
+	public char[] getAlphabet() 
+	{
+		return alphabet;
+	}
 }
