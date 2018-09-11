@@ -1,4 +1,4 @@
-package programmingExercises;
+package P2_3;
 
 import java.awt.Rectangle;
 

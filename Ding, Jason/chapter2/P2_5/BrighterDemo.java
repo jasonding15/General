@@ -1,4 +1,4 @@
-package programmingExercises;
+package P2_5;
 
 import java.awt.Color;
 
