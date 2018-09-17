@@ -29,4 +29,13 @@ public class SavingsAccount
 		return -1.0;
 	}
 	
+	/**
+     * allows user to add the interest
+     * @return the amount of money in the account
+     */
+	public double addInterest()
+	{
+		return -1;
+	}
+	
 }
