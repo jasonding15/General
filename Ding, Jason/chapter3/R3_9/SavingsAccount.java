@@ -1,10 +1,34 @@
 package R3_9;
 
+/**
+ * creates a bank account which you can deposit money into and take money out of
+ * @author jding
+ *
+ */
 public class SavingsAccount 
 {
 	/**
+	 * creates a savings account with no money in it
+	 * @param rate is the interest rate of the account
+	 */
+	public SavingsAccount(double rate)
+	{
+		
+	}
+	
+	/**
+	 * creates a savings account with a deposit in it
+	 * @param initBalance is the initial amount deposited
+	 * @param rate is the interest rate of the account
+	 */
+	public SavingsAccount(double initBalance, double rate)
+	{
+		
+	}
+	
+	/**
      * allows user to deposit money into account
-     * @param mon the amount of money the user wants to deposit
+     * @param mon the amount of money to deposit
      */
 	public void depositMoney(double mon)
 	{
