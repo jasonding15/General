@@ -1,4 +1,4 @@
-package P2_5;
+package p2_5;
 
 import java.awt.Color;
 

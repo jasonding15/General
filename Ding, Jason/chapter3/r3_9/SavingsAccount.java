@@ -1,4 +1,4 @@
-package R3_9;
+package r3_9;
 
 /**
  * creates a bank account which you can deposit money into and take money out of

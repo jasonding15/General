@@ -1,4 +1,4 @@
-package P2_9;
+package p2_9;
 
 public class ReplaceTester //P2.9
 {

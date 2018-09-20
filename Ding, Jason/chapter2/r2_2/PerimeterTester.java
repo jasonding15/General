@@ -1,4 +1,4 @@
-package P2_2;
+package r2_2;
 
 import java.awt.Rectangle;
 
