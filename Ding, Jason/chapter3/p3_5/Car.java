@@ -4,7 +4,7 @@ public class Car
 {
 	private double mpg, gasInTank;
 	
-	Car(double mpg)
+	public Car(double mpg)
 	{
 		this.mpg = mpg;
 	}
