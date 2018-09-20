@@ -11,7 +11,7 @@ public class EmployeeTester
 		
 		Employee navin = new Employee("Navin", 10);
 		navin.raiseSalary(50);
-		System.out.println(navin.getSalary());
+		System.out.println(navin.getName() + " makes " + navin.getSalary());
 		
 		Employee leon = new Employee("Leon", 1);
 		leon.raiseSalary(1);
