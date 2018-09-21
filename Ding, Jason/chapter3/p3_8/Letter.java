@@ -15,8 +15,8 @@ public class Letter
 	public Letter(String from, String to)
 	{
 		mail = "";
-		this.from = from;
 		this.to = to;
+		this.from = from;
 	}
 	/**
 	 * @param line adds a string to the letter on a new line
