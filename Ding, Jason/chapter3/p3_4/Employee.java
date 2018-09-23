@@ -1,9 +1,8 @@
 package p3_4;
 
 /**
- * able to keep track of employees name and manage his salary
+ * represents an employee with a name and a salary
  * @author Jason Ding
- *
  */
 public class Employee 
 {
@@ -11,7 +10,7 @@ public class Employee
 	private double salary;
 	
 	/**
-	 * creates a new tab on an employee
+	 * constructs an employee object with specified name and salary
 	 * @param employeeName is the name of the employee
 	 * @param salary is the yearly income of the employee
 	 */

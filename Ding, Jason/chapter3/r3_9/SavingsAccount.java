@@ -1,7 +1,7 @@
 package r3_9;
 
 /**
- * creates a bank account which you can deposit money into and take money out of
+ * creates a bank account that can take deposits and withdraw money out of
  * @author jding
  */
 public class SavingsAccount 

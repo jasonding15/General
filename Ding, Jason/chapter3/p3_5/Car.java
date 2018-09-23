@@ -1,7 +1,7 @@
 package p3_5;
 
 /**
- * keeps track of the amount of gas in the car
+ * represents a car that has fuel and can drive 
  * @author Jason Ding
  */
 public class Car 
@@ -9,7 +9,7 @@ public class Car
 	private double mpg, gasInTank;
 	
 	/**
-	 * creates a new tab on a car
+	 * constructs a car object with a specified efficiency
 	 * @param mpg is the amount of miles the car can travel per gallon of gas
 	 */
 	public Car(double mpg)
