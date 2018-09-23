@@ -1,6 +1,17 @@
-R3.1
-R3.2
-R3.3
-R3.7
-R3.11
-R3.12 
+R3.1: There is a already a constructor that takes no parameters that defaults the initial balance at $0;
+
+R3.2: BankAccount b = new BankAccount(5000) creates a new reference 'b' pointing towards the object 
+	  BankAccount with $5000 in it.
+	  BankAccount b only creates a reference called 'b'.
+ 
+R3.3: new BankAccount(5000) creates a new object BankAccount. BankAccount b = new BankAccount(5000) creates
+	  a new object BankAccount and a reference 'b' pointing to that object.
+	  
+R3.7: The this keyword is a reference to the current object. ie, if the instance fields are called the same 
+	  thing as the constructor parameters, calling "this" would mean the instance field
+	  
+R3.11: a local variable exists solely within the method it is created/used in. A parameter variable 
+	   is external. It is passed in to the method from the caller
+	   
+R3.12: a local variable exists solely within the method it is created in. An instance field exists througout
+	   the entire class
