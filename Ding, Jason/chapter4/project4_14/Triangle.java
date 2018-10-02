@@ -1,4 +1,4 @@
-package project4_14_part1;
+package project4_14;
 
 import java.awt.geom.Point2D;
 
