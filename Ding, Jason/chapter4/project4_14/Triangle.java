@@ -27,9 +27,14 @@ public class Triangle
 	 * @param v the vertex opposite the side to be calculated (1, 2, or 3)
 	 * @return the length of the side opposite the vertex
 	 */
-	public double getSideLength( int v )
+	public double getSideLength(int v)
 	{
-		return -1.0;
+		if (v == 1)
+			return p2.distance(p3);
+		else if (v == 2)
+			return p3.distance(p1);
+		else
+			return p1.distance(p2);
 	}
 	
 	/**
@@ -59,4 +64,5 @@ public class Triangle
 	{
 		return -1.0;
 	}
+	
 }
