@@ -44,7 +44,29 @@ public class Triangle
 	 */
 	public double getAngle( int v )
 	{
-		return -1.0;
+		int side1 = -1;
+		int side2 = -1;
+		if (v == 1)
+		{
+			side1 = 2;
+			side2 = 3;
+		}
+		
+		else if (v == 2)
+		{
+			side1 = 1;
+			side2 = 3;
+		}
+		
+		else 
+		{
+			side1 = 2;
+			side2 = 1;
+		}
+		
+		double length1 = getSideLength(side1);
+		double length2 = getSideLength(side2);
+		return Math.acos((Math.pow(length1, 2) + Math.pow(length2, 2) - Math.pow(getSideLength(v), 2))/ (2 * length1 * length2));
 	}
 	
 	/**
@@ -53,7 +75,8 @@ public class Triangle
 	 */
 	public double getArea()
 	{
-		return -1.0;
+		double p = getPerimeter() / 2.0;
+		return Math.sqrt(p * (p - getSideLength(1)) * (p - getSideLength(2)) * (p - getSideLength(3)));
 	}
 	
 	/**
@@ -62,7 +85,7 @@ public class Triangle
 	 */
 	public double getPerimeter()
 	{
-		return -1.0;
+		return getSideLength(1) + getSideLength(2) + getSideLength(3);
 	}
 	
 }
