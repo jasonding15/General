@@ -15,7 +15,7 @@ public class Triangle
 	 * @param p2 vertex number 2
 	 * @param p3 vertex number 3
 	 */
-	public Triangle( Point2D.Double p1, Point2D.Double p2, Point2D.Double p3 )
+	public Triangle(Point2D.Double p1, Point2D.Double p2, Point2D.Double p3)
 	{
 		this.p1 = p1;
 		this.p2 = p2;
@@ -42,7 +42,7 @@ public class Triangle
 	 * @param v one vertex out of the three (1, 2, or 3)
 	 * @return the angle of the vertex
 	 */
-	public double getAngle( int v )
+	public double getAngle(int v)
 	{
 		int side1 = -1;
 		int side2 = -1;
