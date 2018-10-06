@@ -17,18 +17,20 @@ public class TimeInterval
 	
 	public int getHours()
 	{
-		return -1;
+		return getTotalTime() / 60;
 	}
 	
 	public int getMinutes()
 	{
-		return -1;
+		return getTotalTime() % 60;
 	}
 	
 	private int getTotalTime()
 	{
-		
-		return -1;
+		int timeDifference = convertToMinutes(time2) - convertToMinutes(time1);
+		if(timeDifference <= 0)
+			timeDifference += convertToMinutes("2400");
+		return timeDifference;
 	}
 	
 	private int convertToMinutes(String time)
