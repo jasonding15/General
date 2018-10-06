@@ -12,6 +12,7 @@ public class TimeIntervalTester
 		String first = fromKeyboard.nextLine();
 		System.out.print("Input second military time: ");
 		String second = fromKeyboard.nextLine();
+		fromKeyboard.close();
 		TimeInterval ti = new TimeInterval(first, second);
 		System.out.println("Difference in times: " + ti.getHours() + " hours, " + ti.getMinutes() + " minutes.");
 //		System.out.println(ti.convertToMinutes("2400"));
