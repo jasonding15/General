@@ -7,17 +7,17 @@ public class Chapter2
 {
 	public static void main(String[] args)
 	{
-		double temp, weight, age; //number 1
+//		double temp, weight, age; //number 1
 		
-		int months = 2, days, years = 3; //number 2
+//		int months = 2, days, years = 3; //number 2
 		
 		double a = 2, b = 3; //number 3
 		b = a + 2;
 		a = 4 * b;
 		b = a / 3.14;
 		a = b - 8;
-		char c ='K';
-		c = 'B';
+//		char c ='K';
+//		c = 'B';
 		
 		double speed = 20, time = 10; //number 7
 		double distance = speed * time;
