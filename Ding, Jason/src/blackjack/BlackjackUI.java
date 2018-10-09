@@ -151,25 +151,25 @@ public class BlackjackUI
 	/**
 	 * Displays the result of the hand (push, player win, player blackjack or loss)
 	 */
-	private void displayResult()
-	{
-	    // TODO: implement
-	}
+//	private void displayResult()
+//	{
+//	    // TODO: implement
+//	}
 
 	/**
 	 * Returns the numeric representation of input or -1 if input is not numeric
 	 * @param input the value to be converted to a number
 	 * @return numeric representation or -1
 	 */
-	private double stringToNumber(String input)
-	{
-		try
-		{
-			return Double.parseDouble(input);
-		}
-		catch(NumberFormatException e)
-		{
-			return -1;
-		}
-	}
+//	private double stringToNumber(String input)
+//	{
+//		try
+//		{
+//			return Double.parseDouble(input);
+//		}
+//		catch(NumberFormatException e)
+//		{
+//			return -1;
+//		}
+//	}
 }
