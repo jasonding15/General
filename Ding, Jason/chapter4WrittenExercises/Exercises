@@ -12,7 +12,9 @@ R4.1 - s = so + vot + ((Math.pow(t, 2)*g)/2;
 R4.3 - needs to be parantheses around 4 * a * c
 R4.10 - a. it sets y to the value of x + x, which will be 4
         b. it combines two copies of the s. in this case it'd be "22"
-R4.13 - 
+R4.13 - x % 10 will get last digit, check if x % 10 == 6;
+        int d = (int) Math.log(x);
+        x / Math.pow(10, d) == 2 checks first digit
 R4.16 - a. -3.5 - (6.5) * -1.5
 R4.11 - a. false b. true c. true
 R4.12 - first: s.substring(0); last: s.substring(s.length() - 1);
