@@ -1,6 +1,6 @@
 package week2QuizStart;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class Quiz
 {

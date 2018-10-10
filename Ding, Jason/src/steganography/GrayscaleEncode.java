@@ -115,88 +115,88 @@ public class GrayscaleEncode extends PApplet
 	}
 	
 	
-	public int encodeOnePixel(int pixelColor, int pixelGray)
-	{
-		float gRed = red(pixelGray);
-		float cRed = red(pixelColor);
-		float cGreen = green(pixelColor);
-		float cBlue = blue(pixelColor);
-		float newRed = cRed;
-		float newGreen = cGreen;
-		float newBlue = cBlue;
-		
-		if (gRed < 36)
-		{
-			if (cRed % 2 == 1)
-				newRed = cRed - 1;
-			if (cGreen % 2 == 1)
-				newGreen = cGreen - 1;
-			if (cBlue % 2 == 1)
-				newBlue = cBlue - 1;
-		}
-		
-		if (gRed < 73)
-		{
-			if (cRed % 2 == 1)
-				newRed = cRed - 1;
-			if (cGreen % 2 == 1)
-				newGreen = cGreen - 1;
-			if (cBlue % 2 == 0)
-				newBlue = cBlue + 1;
-		}
-		
-		if (gRed < 109)
-		{
-			if (cRed % 2 == 1)
-				newRed = cRed - 1;
-			if (cGreen % 2 == 0)
-				newGreen = cGreen + 1;
-			if (cBlue % 2 == 1)
-				newBlue = cBlue + 1;
-		}
-		
-		if (gRed < 146)
-		{
-			if (cRed % 2 == 1)
-				newRed = cRed - 1;
-			if (cGreen % 2 == 0)
-				newGreen = cGreen + 1;
-			if (cBlue % 2 == 0)
-				newBlue = cBlue + 1;
-		}
-		
-		if (gRed < 182)
-		{
-			if (cRed % 2 == 0)
-				newRed = cRed + 1;
-			if (cGreen % 2 == 1)
-				newGreen = cGreen - 1;
-			if (cBlue % 2 == 1)
-				newBlue = cBlue - 1;
-		}
-		
-		if (gRed < 219)
-		{
-			if (cRed % 2 == 0)
-				newRed = cRed + 1;
-			if (cGreen % 2 == 1)
-				newGreen = cGreen - 1;
-			if (cBlue % 2 == 0)
-				newBlue = cBlue + 1;
-		}
-		
-		if (gRed <= 255)
-		{
-			if (cRed % 2 == 0)
-				newRed = cRed + 1;
-			if (cGreen % 2 == 1)
-				newGreen = cGreen - 1;
-			if (cBlue % 2 == 1)
-				newBlue = cBlue - 1;
-		}
-		return -1;
-			
-	}
+//	public int encodeOnePixel(int pixelColor, int pixelGray)
+//	{
+//		float gRed = red(pixelGray);
+//		float cRed = red(pixelColor);
+//		float cGreen = green(pixelColor);
+//		float cBlue = blue(pixelColor);
+//		float newRed = cRed;
+//		float newGreen = cGreen;
+//		float newBlue = cBlue;
+//		
+//		if (gRed < 36)
+//		{
+//			if (cRed % 2 == 1)
+//				newRed = cRed - 1;
+//			if (cGreen % 2 == 1)
+//				newGreen = cGreen - 1;
+//			if (cBlue % 2 == 1)
+//				newBlue = cBlue - 1;
+//		}
+//		
+//		if (gRed < 73)
+//		{
+//			if (cRed % 2 == 1)
+//				newRed = cRed - 1;
+//			if (cGreen % 2 == 1)
+//				newGreen = cGreen - 1;
+//			if (cBlue % 2 == 0)
+//				newBlue = cBlue + 1;
+//		}
+//		
+//		if (gRed < 109)
+//		{
+//			if (cRed % 2 == 1)
+//				newRed = cRed - 1;
+//			if (cGreen % 2 == 0)
+//				newGreen = cGreen + 1;
+//			if (cBlue % 2 == 1)
+//				newBlue = cBlue + 1;
+//		}
+//		
+//		if (gRed < 146)
+//		{
+//			if (cRed % 2 == 1)
+//				newRed = cRed - 1;
+//			if (cGreen % 2 == 0)
+//				newGreen = cGreen + 1;
+//			if (cBlue % 2 == 0)
+//				newBlue = cBlue + 1;
+//		}
+//		
+//		if (gRed < 182)
+//		{
+//			if (cRed % 2 == 0)
+//				newRed = cRed + 1;
+//			if (cGreen % 2 == 1)
+//				newGreen = cGreen - 1;
+//			if (cBlue % 2 == 1)
+//				newBlue = cBlue - 1;
+//		}
+//		
+//		if (gRed < 219)
+//		{
+//			if (cRed % 2 == 0)
+//				newRed = cRed + 1;
+//			if (cGreen % 2 == 1)
+//				newGreen = cGreen - 1;
+//			if (cBlue % 2 == 0)
+//				newBlue = cBlue + 1;
+//		}
+//		
+//		if (gRed <= 255)
+//		{
+//			if (cRed % 2 == 0)
+//				newRed = cRed + 1;
+//			if (cGreen % 2 == 1)
+//				newGreen = cGreen - 1;
+//			if (cBlue % 2 == 1)
+//				newBlue = cBlue - 1;
+//		}
+//		return -1;
+//			
+//	}
 	
 }
 

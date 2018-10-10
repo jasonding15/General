@@ -7,7 +7,7 @@ public class IntersectionLightsController
 	private LightAtIntersection top, left, bottom, right; //bottomStopLight, rightStopLight;
 	private PApplet parent;
 	private int yellowDelay, greenDelay, nextChange, bothRedDelay, greenArrowDelay;
-	private boolean withArrowIsActive, arrowIsOn;
+	private boolean withArrowIsActive;
 	
 	public IntersectionLightsController(PApplet par)
 	{
@@ -23,7 +23,6 @@ public class IntersectionLightsController
 		greenDelay = 5000;
 		nextChange = 1000;
 		withArrowIsActive = false;
-		arrowIsOn = true;
 	}
 	
 	public void updateShownLight()
