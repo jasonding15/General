@@ -5,6 +5,7 @@
 	<classpathentry kind="src" path="chapter2"/>
 	<classpathentry kind="src" path="chapter3"/>
 	<classpathentry kind="src" path="chapter4"/>
+	<classpathentry kind="src" path="chapter5"/>
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
