@@ -48,6 +48,8 @@ public class CashRegister
       change = payment - purchase;
       purchase = 0;
       payment = 0;
+      change *= 100.0;
+      change = Math.round(change) / 100.0;
       return change;
    }
 
