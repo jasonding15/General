@@ -1,11 +1,22 @@
-R4.6
-R4.7
-R4.8
-R4.15
-R4.1
-R4.3
-R4.10
-R4.13
-R4.16
-R4.11
-R4.12
+R4.4 - same thing would happen with floats as integers
+R4.5 - this example would not be a problem with integers because it would round correctly 
+R4.7 - n = (int) x will merely truncate x. the second one will actually round it to the nearest int
+R4.8 - both n = (int) (x + 0.5); and n = (int) Math.round(x); will return the same numbers
+       when the decimal part of the number is < 0.5. 
+R4.15 - It represents a constant. You can define it without because it will use its default value
+R4.1 - s = so + vot + ((Math.pow(t, 2)*g)/2;
+	   g = (Math.pow(pi,2)*4)*((Math.pow(a, 3)/((Math.pow(p,2)*(m1 + m2));
+	   fv = pv*((Math.pow(1+((i*n*t)/100)), (Y*RS)));
+	   c = Math.sqrt((Math.pow(a, 2) + (Math.pow(b, 2) - 2(a*b) * cos * y);
+
+R4.3 - needs to be parantheses around 4 * a * c
+R4.10 - a. it sets y to the value of x + x, which will be 4
+        b. it combines two copies of the s. in this case it'd be "22"
+R4.13 - 
+R4.16 - a. -3.5 - (6.5) * -1.5
+R4.11 - a. false b. true c. true
+R4.12 - first: s.substring(0); last: s.substring(s.length() - 1);
+        remove first: s.subsring(1, s.length() -1)
+        remove last: s.substring(0, s.length() -2)
+R4.6 - that result is printed due to a double rounding error. to avoid this, the coder can use integers
+       and total cents rather than dollars and cents as a double
