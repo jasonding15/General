@@ -2,13 +2,13 @@ package p4_12;
 
 public class DigitExtractor 
 {
+	private int digitCount;
+	private String digits;
 	/**
 	 * constructs a digit extactor that gets the digits of an integer
 	 * in reverse order
 	 * @param x is the integer to break into digits
 	 */
-	private int digitCount;
-	private String digits;
 	public DigitExtractor(int x)
 	{
 		digits = Integer.toString(x);
@@ -16,6 +16,10 @@ public class DigitExtractor
 
 	}
 	
+	/**
+	 * gives back the next digit in reverse order
+	 * @return the next to last digit
+	 */
 	public int nextDigit()
 	{
 		digitCount--;

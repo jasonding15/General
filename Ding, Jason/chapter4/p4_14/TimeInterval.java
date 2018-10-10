@@ -15,17 +15,26 @@ public class TimeInterval
 		this.time2 = time2;
 	}
 	
+	/**
+	 * @return the hours difference between the two times
+	 */
 	public int getHours()
 	{
-		return getTotalTime() / 60;
+		return getTotalDifference() / 60;
 	}
 	
+	/**
+	 * @return the minutes difference between the two times
+	 */
 	public int getMinutes()
 	{
-		return getTotalTime() % 60;
+		return getTotalDifference() % 60;
 	}
 	
-	private int getTotalTime()
+	/**
+	 * @return the total minutes difference between the two times
+	 */
+	private int getTotalDifference()
 	{
 		int timeDifference = convertToMinutes(time2) - convertToMinutes(time1);
 		if(timeDifference <= 0)
@@ -33,6 +42,11 @@ public class TimeInterval
 		return timeDifference;
 	}
 	
+	/**
+	 * calculates the total time in minutes for a military time
+	 * @param time is the military time to be converted
+	 * @return the total minutes in the time
+	 */
 	private int convertToMinutes(String time)
 	{
 		int hours = Integer.parseInt(time.substring(0, 2));
