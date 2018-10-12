@@ -38,7 +38,9 @@ public class Line
 	 */
 	public Line(String equation)
 	{
-		
+		int xIndex = equation.indexOf('x');
+		this.slope = Double.parseDouble(equation.substring(4, xIndex));
+		this.yIntercept = Double.parseDouble(equation.substring(xIndex + 4));
 	}
 	
 	/**
@@ -48,7 +50,7 @@ public class Line
 	 */
 	public Line(String equation, boolean isVertical)
 	{
-		
+	
 	}
 		
 	/**
