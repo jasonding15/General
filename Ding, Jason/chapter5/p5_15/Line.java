@@ -8,6 +8,7 @@ import java.awt.geom.Point2D;
 public class Line 
 {
 	private double slope, yIntercept;
+	private double xIntercept; // irrelevant if line is non-vertical
 	/**
 	 * Constructs a line that passes through the specified point with the specified slope
 	 * @param point point that line passes through
@@ -15,8 +16,9 @@ public class Line
 	 */
 	public Line(Point2D.Double point, double slope )
 	{
-		this.slope = slope;
 		yIntercept = getYintercept(point, slope);
+		this.slope = slope;	
+		xIntercept = Double.NaN;
 	}
 	
 	/**
@@ -28,8 +30,9 @@ public class Line
 	{
 		double yDifference = p2.getY() - p1.getY();
 		double xDifference = p2.getX() - p1.getX();
-		slope = yDifference / xDifference;
+		this.slope = yDifference / xDifference;
 		yIntercept = getYintercept(p1, slope);
+		xIntercept = Double.NaN;
 	}
 	
 	/**
@@ -38,9 +41,7 @@ public class Line
 	 */
 	public Line(String equation)
 	{
-		int xIndex = equation.indexOf('x');
-		this.slope = Double.parseDouble(equation.substring(4, xIndex));
-		this.yIntercept = Double.parseDouble(equation.substring(xIndex + 4));
+		parseString(equation);
 	}
 	
 	/**
@@ -50,7 +51,14 @@ public class Line
 	 */
 	public Line(String equation, boolean isVertical)
 	{
-	
+		if (!isVertical)
+			parseString(equation);
+		else
+		{
+			slope = Double.NaN;
+			yIntercept = Double.NaN;
+			xIntercept = Double.parseDouble(equation.substring(4));
+		}
 	}
 		
 	/**
@@ -60,7 +68,7 @@ public class Line
 	 */
 	public boolean intersects(Line other)
 	{
-		// other.slope
+		return this.slope != other.slope;
 	}
 	
 	/**
@@ -70,7 +78,9 @@ public class Line
 	 */
 	public boolean equals(Line other)
 	{
-		
+		if (! intersects(other) && this.yIntercept == other.yIntercept || this.xIntercept == other.xIntercept)
+			return true;
+		return false;
 	}
 	
 	/**
@@ -80,7 +90,7 @@ public class Line
 	 */
 	public boolean isParallel(Line other)
 	{
-		
+		return !intersects(other);
 	}
 	
 	private double getYintercept(Point2D.Double point, double slope)
@@ -88,4 +98,16 @@ public class Line
 		return point.getY() - point.getX() * slope;
 	}
 	
+	private double getXintercept(Point2D.Double point, double slope)
+	{
+		return -1.0 * getYintercept(point, slope) / slope;
+	}
+	
+	private void parseString(String equation)
+	{
+		int xIndex = equation.indexOf('x');
+		this.slope = Double.parseDouble(equation.substring(4, xIndex));
+		this.yIntercept = Double.parseDouble(equation.substring(xIndex + 4));
+		xIntercept = Double.NaN;
+	}
 }
