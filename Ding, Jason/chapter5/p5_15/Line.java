@@ -93,14 +93,17 @@ public class Line
 		return !intersects(other);
 	}
 	
+	public String toString()
+	{
+		if (Double.isNaN(slope))
+			return "x = " + xIntercept;
+		else
+			return "y = " + slope + "x " + "+ " + yIntercept;
+	}
+	
 	private double getYintercept(Point2D.Double point, double slope)
 	{
 		return point.getY() - point.getX() * slope;
-	}
-	
-	private double getXintercept(Point2D.Double point, double slope)
-	{
-		return -1.0 * getYintercept(point, slope) / slope;
 	}
 	
 	private void parseString(String equation)
