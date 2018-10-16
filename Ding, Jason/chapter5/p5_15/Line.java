@@ -30,7 +30,8 @@ public class Line
 	{
 		double yDifference = p2.getY() - p1.getY();
 		double xDifference = p2.getX() - p1.getX();
-		this.slope = yDifference / xDifference;
+		int m = (int) (yDifference / xDifference * 100);
+		this.slope = (double) (m/100.0);
 		yIntercept = getYintercept(p1, slope);
 		xIntercept = Double.NaN;
 	}
