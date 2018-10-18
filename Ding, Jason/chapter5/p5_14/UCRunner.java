@@ -9,23 +9,23 @@ public class UCRunner
 	{
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Convert from:");
+		System.out.print("Convert from:");
 		String fromUnit = in.nextLine();
 		
-		System.out.println("Convert to: ");
+		System.out.print("Convert to: ");
 		String toUnit = in.nextLine();
 		
 		UnitConverter from = new UnitConverter(fromUnit);
 		UnitConverter to = new UnitConverter(toUnit);
 		
-		System.out.println("Value: ");
+		System.out.print("Value: ");
 		double val = in.nextDouble();
 		
 		double meters = from.toMeters(val);
 		double converted = to.fromMeters(meters);
-		
-		System.out.println("Converted Unit in specified Units: " + converted);
 		in.close();
+
+		System.out.println("Converted Unit in specified Units: " + converted);
 	}
 
 }
