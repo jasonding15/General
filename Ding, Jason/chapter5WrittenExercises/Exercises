@@ -1,8 +1,21 @@
-8:
-12:
-13:
-14:
-3:
-4:
-9:
-10:
+8:	True
+12: The == operator compares primitive types only. The .equals method compares objects like strings. 
+13: r == s checks if the arrows are pointing to the same rectangle. The equals checks if the content of 
+	the rectangle class are equal to each other
+14: You cannot run methods on null. A null pointer error would be thrown. You must use "==".
+3:  Nested if statements is when you have if statements within if/else statements. 
+	if (x == 3)
+		if (isVertical)
+			return 2;
+		else
+			return 1;
+	else
+		return 0;
+4:	Above, the order of the tests do not matter. The if statements in the student class of compareToPractice
+	has nested if statements where the order does matter.
+9:	The first section of code will add one to s if y > 0, regardless if x < 0. The second section of code 
+	will only add one to s for y > 0 IF x < 0 is false.
+10: a. (x >=0 || y >= 0)
+	b. (x == 0 && y == 0)
+	c. (!country.equals("us") || state.equals("HI") || state.equals("AK"))
+	d. (x % 4 == 0 && x % 100 == 0 && x % 400) 
