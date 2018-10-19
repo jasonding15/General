@@ -1,0 +1,9 @@
+Magpie Activity 2:
+
+keyword										response
+"food", "burger", "fries", "fruit" 			"My favorite food is knowledge."
+"water", "gatorade", "hydration"				"I love to drink fluids, please pour it on me."
+"weather", "sky", "clouds"					"The weather today is nice, no?"
+
+Question:
+The response is the same and recognizes the key word.

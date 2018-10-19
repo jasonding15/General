@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="src" path="magpie_lab"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
