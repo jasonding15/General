@@ -7,3 +7,10 @@ keyword										response
 
 Question:
 The response is the same and recognizes the key word.
+
+Magpie Activity 3
+findKeyword("She's my sister", "sister", 0)
+phrase : "She'smysister"
+psn = 7
+before : "y"
+after : " "
