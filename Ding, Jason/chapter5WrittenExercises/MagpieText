@@ -10,7 +10,17 @@ The response is the same and recognizes the key word.
 
 Magpie Activity 3
 findKeyword("She's my sister", "sister", 0)
-phrase : "She'smysister"
-psn = 7
-before : "y"
+             012345678901234
+phrase : "She's my sister"
+psn = 9
+before : " "
 after : " "
+Return 9;
+
+findKeyword("Brother Tom is helpful", "brother", 0);
+             0123456789012345678901
+Phrase : “Brother Tom is helpful”
+Psn = 0
+Before : “ “
+After : “ “
+Return 0;
