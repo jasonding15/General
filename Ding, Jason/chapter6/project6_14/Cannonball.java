@@ -9,7 +9,7 @@ public class Cannonball
 	public Cannonball(double velocity, double angle)
 	{
 		hVelocity = Math.cos(angle) * velocity;
-		vVelocity = Math.cos(angle) * velocity;
+		vVelocity = Math.sin(angle) * velocity;
 		height = 0;
 		distance = 0;
 		time = 0;
