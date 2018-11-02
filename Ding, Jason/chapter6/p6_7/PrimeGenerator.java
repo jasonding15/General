@@ -2,28 +2,30 @@ package p6_7;
 
 public class PrimeGenerator 
 {
-	public int prime, number;
+	public int number, lastPrime;
 	public PrimeGenerator(int number)
 	{
 		this.number = number;
-		prime = 2;
+		lastPrime = 1;
 	}
 	
 	public int nextPrime()
 	{
-		for( int i = prime + 1; i < number; i++)
+		for( int i = lastPrime + 1; i < number; i++)
 		{
 			if (isPrime(i))
 			{
-				prime = i;
+				lastPrime = i;
 				return i;
 			}
 		}
 		return -1;
 	}
 	
-	private boolean isPrime(int x)
+	public boolean isPrime(int x)
 	{
+		if (x == 2)
+			return true;
 		for (int i = 2; i < x; i++)
 		{
 			if (x % i == 0)
