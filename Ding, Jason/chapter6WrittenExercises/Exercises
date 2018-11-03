@@ -38,12 +38,28 @@ while (s >= 0.1)
 }
 
 R6.7
-multiple return statements: (best)
-if (isValidBridgeLength && isValidBridgeFeet)
-	return bridgeLength;
-return -1;
+1. Read name of bridge
+   if not OK, break
+   Read length of bridge in feet
+   If not OK, break
+   Convert length to meters
+   Print bridge data
+      
+2. Read name of bridge
+   If not OK, set boolean to false
+   Read length of bridge in feet
+   If not OK, set boolean to false
+   Convert length to meters
+   set boolean to true which Prints bridge data
+      
+3. Read name of bridge
+   If not OK, return -1
+   Read length of bridge in feet
+   If not OK, return -1
+   Convert length to meters
+   return bridge data
+	
 
-boolean + break statement:i have no idea!?
 
 R6.11
 An off-by-one error occurs when running methods on a string, like using the substring method.
