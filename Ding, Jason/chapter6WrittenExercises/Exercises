@@ -1,0 +1,55 @@
+R6.2
+0000000000
+0123456789
+0246802468
+0369258147
+0482604826
+0505050505
+0628406284
+0741852963
+0864208642
+0987654321
+
+R6.3
+a. 10
+b. 9
+c. 9
+d. 20
+e. infinite
+f. 10
+g. 7
+
+R6.4
+int s = 0;
+while (s <= 10)
+{
+	s ++;
+}
+
+R6.5
+int n = 1;
+double x = 0;
+double s;
+while (s >= 0.1)
+{
+	s = 1.0 / (n * n);
+	x += s;
+	n++;
+}
+
+R6.7
+multiple return statements: (best)
+if (isValidBridgeLength && isValidBridgeFeet)
+	return bridgeLength;
+return -1;
+
+boolean + break statement:i have no idea!?
+
+R6.11
+An off-by-one error occurs when running methods on a string, like using the substring method.
+I used to go out of bounds a lot.
+R6.12
+symmetric:
+for (int i = 0; i <= 10, i++)
+asymmetric:
+for (int i = 0; i < str.length, i++)
