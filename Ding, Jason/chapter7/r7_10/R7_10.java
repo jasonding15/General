@@ -1,19 +1,19 @@
-package r7_8;
+package r7_10;
 
 import java.util.Arrays;
 
-public class R7_8 
+public class R7_10 
 {
 
 	public static void main(String[] args) 
 	{
-		int[] arr = new int[10];
+		int[] arr = new int[20];
 		for (int i = 0; i < arr.length; i++)
 		{
-			arr[i] = (int) (Math.random() * 100 + 1);
-			//              1 <= x <= 100
+			arr[i] = (int) Math.pow(i + 1, 2);
 		}
 		System.out.println(Arrays.toString(arr));
+		// elements beyond those I filled are 0s
 	}
 
 }
