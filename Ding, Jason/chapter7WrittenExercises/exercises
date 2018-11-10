@@ -9,12 +9,21 @@ R7.7 - in eclipse
 R7.8 - in eclipse
 R.10 - elements beyond those I filled are 0s
 
-R7.13a - public int getFirstNumber( int[] arr)
-         return arr[0];
-     b - public int setFirstNumber( int[] arr, int x)
-         arr[0] = x;
-     c - public int[] resetArray(int[] arr)
-         loop through array, set all the values as 0, return array
+R7.13
+a - public int getFirstNumber( int[] arr)
+    return arr[0];
+b - public int setFirstNumber( int[] arr, int x)
+    arr[0] = x;
+c - public int[] resetArray(int[] arr)
+    loop through array, set all the values as 0, return array
+    
+R7.15
+Parallel arrays are two arrays that stores information that should be grouped together. 
+The information would be better off stored in one array of objects, since using two arrays is confusing
+and leads to errors.
+
+
+
          
 
         
