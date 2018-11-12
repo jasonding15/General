@@ -22,6 +22,11 @@ Parallel arrays are two arrays that stores information that should be grouped to
 The information would be better off stored in one array of objects, since using two arrays is confusing
 and leads to errors.
 
+R7.18
+b. false
+c. true
+d. false
+
 
 
          
