@@ -1,5 +1,7 @@
 package baseConversion;
 
+import java.util.ArrayList;
+
 public class BaseConverter
 {
     static char digitToChar(int digit) // package access for testing
@@ -21,14 +23,20 @@ public class BaseConverter
     
     public static String convertFromBase10(int num, int targetBase)
     {
-    		String result = "";
-    		int quotient = -1;
-    		while (quotient >= 0)
-    		{
-    			result += digitToChar(targetBase % 16);
-    			quotient = targetBase / 16;
-    		}
-    		return result;
+       	ArrayList<Character> remainders = new ArrayList<Character>();
+    	int quotient = num / targetBase;
+    	while (quotient > 0)
+    	{
+    		remainders.add(0, digitToChar(num % targetBase));
+    		quotient = num / targetBase;
+    		num /= targetBase;
+    	}
+    	String str = "";
+    	for (int i = 0; i < remainders.size(); i++)
+    	{
+    		str += remainders.get(i);
+    	}
+    	return str;
     }
 
     static int charToValue(char digit) // package access for testing
