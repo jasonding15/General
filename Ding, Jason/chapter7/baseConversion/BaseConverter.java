@@ -41,16 +41,36 @@ public class BaseConverter
 
     static int charToValue(char digit) // package access for testing
     {
-        return -1; // TODO: implement
+    	if (digit == 'A')
+			return 10;
+		if (digit == 'B')
+			return 11;
+		if (digit == 'C')
+			return 12;
+		if (digit == 'D')
+			return 13;
+		if (digit == 'E')
+			return 14;
+		if (digit == 'F')
+			return 15;
+    	return (int) (digit - 48); // TODO: implement
     }
     
     public static int convertToBase10(String num, int originalBase)
     {
-        return -1; // TODO: implement
+        int sum = 0;
+        for (int i = 0; i < num.length(); i++)
+        {
+        	int number = charToValue(num.charAt(i));
+        	int position = num.substring(i).length() - 1;
+        	sum += number * Math.pow(originalBase, position);
+        }
+    	return sum;
     }
 
     public static String convert(String num, int originalBase, int targetBase)
     {
-        return null; // TODO: implement
+        int numInBaseTen = convertToBase10(num, originalBase);
+        return convertFromBase10(numInBaseTen , targetBase);
     }
 }
