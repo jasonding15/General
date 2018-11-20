@@ -23,21 +23,21 @@ public class BaseConverter
     
     public static String convertFromBase10(int num, int targetBase)
     {
-       	ArrayList<Character> remainders = new ArrayList<Character>();
-    	int quotient = num / targetBase;
-    	while (quotient > 0)
-    	{
-    		remainders.add(0, digitToChar(num % targetBase));
-    		quotient = num / targetBase;
-    		num /= targetBase;
+    		ArrayList<Character> remainders = new ArrayList<Character>();
+    		int quotient = num / targetBase;
+    		while (quotient > 0)
+    		{
+    			remainders.add(0, digitToChar(num % targetBase));
+    			quotient = num / targetBase;
+    			num /= targetBase;
+    		}
+    		String str = "";
+    		for (int i = 0; i < remainders.size(); i++)
+    		{
+    			str += remainders.get(i);
+    		}
+    		return str;
     	}
-    	String str = "";
-    	for (int i = 0; i < remainders.size(); i++)
-    	{
-    		str += remainders.get(i);
-    	}
-    	return str;
-    }
 
     static int charToValue(char digit) // package access for testing
     {
