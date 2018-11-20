@@ -53,7 +53,7 @@ public class BaseConverter
 			return 14;
 		if (digit == 'F')
 			return 15;
-    	return (int) (digit - 48); // TODO: implement
+		return (int) (digit - 48); // TODO: implement
     }
     
     public static int convertToBase10(String num, int originalBase)
@@ -65,7 +65,7 @@ public class BaseConverter
         	int position = num.substring(i).length() - 1;
         	sum += number * Math.pow(originalBase, position);
         }
-    	return sum;
+        return sum;
     }
 
     public static String convert(String num, int originalBase, int targetBase)
