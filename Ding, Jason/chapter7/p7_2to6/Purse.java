@@ -25,13 +25,20 @@ public class Purse
 		}
 	}
 	
-	public void transferPurse(Purse a, Purse b)
+	public boolean sameContents(Purse other)
 	{
-		for (int i = 0; i < b.arr.size(); i++)
+		if (other.arr.equals(this.arr))
+			return true;
+		return false;
+	}
+	
+	public void transferPurse(Purse other)
+	{
+		for (int i = 0; i < other.arr.size(); i++)
 		{
-			a.addCoin(b.arr.get(i));
+			this.addCoin(other.arr.get(i));
 		}
-		b.arr.clear();
+		other.arr.clear();
 		
 	}
 	
