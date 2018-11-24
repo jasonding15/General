@@ -1,6 +1,7 @@
 package p7_2to6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Purse 
 {
@@ -12,7 +13,7 @@ public class Purse
 	
 	public void addCoin(String coinName)
 	{
-		arr.add(coinName);
+		arr.add(coinName.toUpperCase());
 	}
 	
 	public void reverseCoins()
@@ -40,6 +41,34 @@ public class Purse
 		}
 		other.arr.clear();
 		
+	}
+	
+	public boolean sameCoins(Purse other)
+	{
+		int[] arr1 = countCoins(this.arr);
+		int[] arr2 = countCoins(other.arr);
+		return Arrays.equals(arr1, arr2);
+		
+		
+	}
+	
+	private static int[] countCoins(ArrayList<String> arr)
+	{
+		int[] count = new int[] {0, 0, 0, 0};
+		for (int i = 0; i < arr.size(); i++)
+		{
+			if (arr.get(i).equals("PENNY"))
+				count[0]++;
+			else if (arr.get(i).equals("NICKEL"))
+				count[1]++;
+			else if (arr.get(i).equals("DIME"))
+				count[2]++;
+			else
+				count[3]++;
+		}
+		
+		return count;
+
 	}
 	
 	public String toString()
