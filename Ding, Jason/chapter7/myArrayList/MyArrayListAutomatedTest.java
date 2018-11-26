@@ -1,5 +1,7 @@
 package myArrayList;
 
+import java.util.Arrays;
+
 import junit.framework.TestCase;
 
 public class MyArrayListAutomatedTest extends TestCase
@@ -132,8 +134,9 @@ public class MyArrayListAutomatedTest extends TestCase
         Object[] aBefore = mAL.getA();
         
         mAL.trimToSize();
-        
-        assertTrue(mAL.getA() == aBefore);
+//        System.out.println(Arrays.toString(mAL.getA()));
+//        System.out.println(Arrays.toString(aBefore));
+        assertTrue(mAL.getA() == aBefore); //should this be Arrays.equals()?
     }
     
     public void testAddIndexValidityCheck()
