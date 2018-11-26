@@ -26,7 +26,7 @@ public class MyArrayList<E>
 
     public E get(int index)
     {
-        if (index < 0 || index >= a.length) // TODO: replace this with the correct condition
+        if (index < 0 || index >= size) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
 
         // Note: You must cast the reference from the array to type E.
@@ -37,7 +37,7 @@ public class MyArrayList<E>
 
     public E set(int index, E element)
     {
-        if (index < 0 || index >= a.length) // TODO: replace this with the correct condition
+        if (index < 0 || index >= size) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
         E value = (E) a[index];
         for (int i = 0; i < a.length; i++)
@@ -58,25 +58,28 @@ public class MyArrayList<E>
 
     public void trimToSize()
     {
-        Object[] b = new Object[size];
-        for (int i = 0; i < a.length; i++)
-        	if (a[i] != null)
-        		b[i] = a[i];
-        a = b;
+    		if (size != a.length)
+    		{
+    			Object[] b = new Object[size];
+    			for (int i = 0; i < a.length; i++)
+    				if (a[i] != null)
+    					b[i] = a[i];
+    			a = b;
+    		}
     }
 
     public void add(int index, E element)
     {
-        if (index < 0 || index >= a.length)
+        if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
         size++;
-        Object[] b = new Object[a.length + 1];
-        for (int i = 0; i < index; i++)
-        	b[i] = a[i];
-        b[index] = element;
-        for (int i = index + 1; i < b.length; i++)
-        	b[i] = a[i - 1];
-        a = b;
+//        Object[] b = new Object[a.length + 1];
+//        for (int i = 0; i < index; i++)
+//        	b[i] = a[i];
+//        b[index] = element;
+//        for (int i = index + 1; i < b.length; i++)
+//        	b[i] = a[i - 1];
+//        a = b;
         // TODO: implement
     }
     
