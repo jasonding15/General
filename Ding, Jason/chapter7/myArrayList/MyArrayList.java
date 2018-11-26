@@ -1,5 +1,7 @@
 package myArrayList;
 
+import java.util.Arrays;
+
 public class MyArrayList<E>
 {
     private Object[] a;
@@ -72,33 +74,54 @@ public class MyArrayList<E>
     {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
+        Object[] b = new Object[a.length + 1];
         size++;
-//        Object[] b = new Object[a.length + 1];
-//        for (int i = 0; i < index; i++)
-//        	b[i] = a[i];
-//        b[index] = element;
-//        for (int i = index + 1; i < b.length; i++)
-//        	b[i] = a[i - 1];
-//        a = b;
-        // TODO: implement
+        for (int i = 0; i < index; i++)
+        	b[i] = a[i];
+        b[index] = element;
+        for (int i = index + 1; i < size; i++)
+        	b[i] = a[i - 1];
+        a = b;
     }
     
     public boolean add(E elem)
     {
-        return false; // TODO: implement
+        Object[] b = new Object[a.length + 1];
+        size++;
+        if (size > 1)
+        	for (int i = 0; i < size; i++)
+        		b[i] = a[i];
+        b[size - 1] = elem;
+        if (Arrays.equals(a, b))
+        	return false;
+        a = b;
+        return true;
     }
 
     public E remove(int index)
     {
-        if (true) // TODO: replace this with the correct condition
+        if (index < 0 || index >= size()) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
-
-        return null; // TODO: implement
+        E temp = (E) a[index];
+        Object[] b = new Object[a.length];
+        size--;
+        for (int i = 0; i < index; i++)
+        	b[i] = a[i];
+        for (int i = index + 1; i < a.length; i++)
+        	b[i - 1] = a[i];
+        a = b;
+        return temp; // TODO: implement
     }
 
     public boolean remove(Object elem)
     {
-        return false; // TODO: implement
+        for (int i = 0; i < a.length; i++)
+        	if (a[i].equals(elem))
+        	{
+        		this.remove(i);
+        		return true;
+        	}
+    	return false; // TODO: implement
     }
 
     // start package access methods to facilitate automated testing
