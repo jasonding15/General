@@ -52,7 +52,7 @@ public class MyArrayList<E>
 
     public boolean contains(Object elem)
     {
-        for (int i = 0; i < a.length; i++)
+        for (int i = 0; i < size; i++)
         	if (a[i].equals(elem))
         		return true;
         return false;
@@ -115,12 +115,14 @@ public class MyArrayList<E>
 
     public boolean remove(Object elem)
     {
-        for (int i = 0; i < a.length; i++)
+        for (int i = 0; i < size; i++)
+        {
         	if (a[i].equals(elem))
         	{
         		this.remove(i);
         		return true;
         	}
+        }
     	return false; // TODO: implement
     }
 
