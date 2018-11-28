@@ -86,15 +86,7 @@ public class MyArrayList<E>
     
     public boolean add(E elem)
     {
-        Object[] b = new Object[a.length + 1];
-        size++;
-        if (size > 1)
-        	for (int i = 0; i < size; i++)
-        		b[i] = a[i];
-        b[size - 1] = elem;
-        if (Arrays.equals(a, b))
-        	return false;
-        a = b;
+        add(size, elem);
         return true;
     }
 
@@ -106,7 +98,7 @@ public class MyArrayList<E>
         Object[] b = new Object[a.length];
         size--;
         for (int i = 0; i < index; i++)
-        	b[i] = a[i];
+        		b[i] = a[i];
         for (int i = index + 1; i < a.length; i++)
         	b[i - 1] = a[i];
         a = b;

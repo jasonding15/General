@@ -6,8 +6,8 @@ import junit.framework.TestCase;
 
 public class MyArrayListAutomatedTestAgainstOracle extends TestCase
 {
-    private static final boolean OUTPUT_METHOD_CALLS = true;
-    private static final int NUMBER_OF_METHOD_CALLS = 100;
+    private static final boolean OUTPUT_METHOD_CALLS = false;
+    private static final int NUMBER_OF_METHOD_CALLS = 1000000;
     
     private ArrayList<Integer> oracle;
     private MyArrayList<Integer> underTest;
