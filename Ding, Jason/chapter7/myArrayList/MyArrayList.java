@@ -1,7 +1,5 @@
 package myArrayList;
 
-import java.util.Arrays;
-
 public class MyArrayList<E>
 {
     private Object[] a;
@@ -26,7 +24,8 @@ public class MyArrayList<E>
         return size; // TODO: implement
     }
 
-    public E get(int index)
+    @SuppressWarnings("unchecked")
+	public E get(int index)
     {
         if (index < 0 || index >= size) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
@@ -41,7 +40,8 @@ public class MyArrayList<E>
     {
         if (index < 0 || index >= size) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
-        E value = (E) a[index];
+        @SuppressWarnings("unchecked")
+		E value = (E) a[index];
         for (int i = 0; i < a.length; i++)
         {
         	if (i == index)
@@ -94,7 +94,8 @@ public class MyArrayList<E>
     {
         if (index < 0 || index >= size()) // TODO: replace this with the correct condition
             throw new IndexOutOfBoundsException();
-        E temp = (E) a[index];
+        @SuppressWarnings("unchecked")
+		E temp = (E) a[index];
         Object[] b = new Object[a.length];
         size--;
         for (int i = 0; i < index; i++)

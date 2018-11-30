@@ -41,12 +41,22 @@ public class TwoDArrayPractice
      * 
      * @param str the string to be placed in an array
      * @param rows the number of rows in the array to be returned
-     * @param cols the number of columsn in the array to be returned
+     * @param cols the number of columns in the array to be returned
      * @return an array containing the characters from str in row-major order
      */
     public static String[][] fillRowMajor(String str, int rows, int cols)
     {
-        return null;
+        String [][] grid = new String[cols][rows];
+        for (int i = 0; i < grid.length; i++)
+        {
+        		for (int j = 0; j < rows; j++)
+        		{
+        			if ((i * rows) + j < str.length())
+        				grid[i][j] = str.substring((i * rows) + j, (i * rows) + j + 1);
+        		}
+        }
+        
+    		return grid;
     }
     
     /**
