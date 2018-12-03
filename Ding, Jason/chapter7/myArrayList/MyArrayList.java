@@ -74,14 +74,25 @@ public class MyArrayList<E>
     {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException();
-        Object[] b = new Object[a.length + 1];
         size++;
-        for (int i = 0; i < index; i++)
-        	b[i] = a[i];
-        b[index] = element;
-        for (int i = index + 1; i < size; i++)
-        	b[i] = a[i - 1];
-        a = b;
+        if (a.length >= size)
+        {
+        		for (int i = size - 1; i > index; i--)
+        		{
+        			a[i] = a[i - 1];
+        		}
+        		a[index] = element;
+        }
+        else
+        {
+        		Object[] b = new Object[a.length + 1];
+        		for (int i = 0; i < index; i++)
+        			b[i] = a[i];
+        		b[index] = element;
+        		for (int i = index + 1; i < size; i++)
+        			b[i] = a[i - 1];
+        		a = b;
+        }
     }
     
     public boolean add(E elem)
@@ -110,13 +121,13 @@ public class MyArrayList<E>
     {
         for (int i = 0; i < size; i++)
         {
-        	if (a[i].equals(elem))
-        	{
-        		this.remove(i);
-        		return true;
-        	}
+        		if (a[i].equals(elem))
+        		{
+        			this.remove(i);
+        			return true;
+        		}
         }
-    	return false; // TODO: implement
+        return false; // TODO: implement
     }
 
     // start package access methods to facilitate automated testing

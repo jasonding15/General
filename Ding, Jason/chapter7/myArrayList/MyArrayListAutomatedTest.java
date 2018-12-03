@@ -1,7 +1,5 @@
 package myArrayList;
 
-import java.util.Arrays;
-
 import junit.framework.TestCase;
 
 public class MyArrayListAutomatedTest extends TestCase
