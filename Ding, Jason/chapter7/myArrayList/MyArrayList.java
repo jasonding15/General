@@ -63,9 +63,8 @@ public class MyArrayList<E>
     		if (size != a.length)
     		{
     			Object[] b = new Object[size];
-    			for (int i = 0; i < a.length; i++)
-    				if (a[i] != null)
-    					b[i] = a[i];
+    			for (int i = 0; i < size; i++)
+    				b[i] = a[i];
     			a = b;
     		}
     }
@@ -107,13 +106,9 @@ public class MyArrayList<E>
             throw new IndexOutOfBoundsException();
         @SuppressWarnings("unchecked")
 		E temp = (E) a[index];
-        Object[] b = new Object[a.length];
         size--;
-        for (int i = 0; i < index; i++)
-        		b[i] = a[i];
-        for (int i = index + 1; i < a.length; i++)
-        	b[i - 1] = a[i];
-        a = b;
+        for (int i = index; i < a.length - 1; i++)
+        	a[i] = a[i + 1];
         return temp; // TODO: implement
     }
 
