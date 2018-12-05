@@ -46,13 +46,17 @@ public class TwoDArrayPractice
      */
     public static String[][] fillRowMajor(String str, int rows, int cols)
     {
-        String [][] grid = new String[cols][rows];
-        for (int i = 0; i < grid.length; i++)
+        String [][] grid = new String[rows][cols];
+        int index = 0;
+        for (int r = 0; r < grid.length; r++)
         {
-        		for (int j = 0; j < rows; j++)
+        		for (int c = 0; c < cols; c++)
         		{
-        			if ((i * rows) + j < str.length())
-        				grid[i][j] = str.substring((i * rows) + j, (i * rows) + j + 1);
+        			if (index < str.length())
+        			{
+        				grid[r][c] = str.substring(index, index + 1);
+        				index++;
+        			}
         		}
         }
         
