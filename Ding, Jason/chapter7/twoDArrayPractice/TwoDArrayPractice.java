@@ -50,7 +50,7 @@ public class TwoDArrayPractice
         int index = 0;
         for (int r = 0; r < grid.length; r++)
         {
-        		for (int c = 0; c < cols; c++)
+        		for (int c = 0; c < grid[0].length; c++)
         		{
         			if (index < str.length())
         			{
@@ -59,8 +59,7 @@ public class TwoDArrayPractice
         			}
         		}
         }
-        
-    		return grid;
+        return grid;
     }
     
     /**
@@ -75,7 +74,20 @@ public class TwoDArrayPractice
      */
     public static int[][] fillColumnMajor(int[] vals, int rows, int cols)
     {
-        return null; // TODO: implement
+    	int [][] grid = new int[rows][cols];
+        int index = 0;
+        for (int c = 0; c < grid[0].length; c++)
+        {
+        		for (int r = 0; r < grid.length; r++)
+        		{
+        			if (index < vals.length)
+        			{
+        				grid[r][c] = vals[index];
+        				index++;
+        			}
+        		}
+        }
+        return grid;
     }
     
     /**
@@ -102,7 +114,23 @@ public class TwoDArrayPractice
      */
     public static int[][] fillDownUp(int[] vals, int rows, int cols)
     {
-        return null; // TODO: implement
+    	int [][] grid = new int[rows][cols];
+        int index = 0;
+        for (int c = 0; c < grid[0].length; c++)
+        {
+        		for (int r = 0; r < grid.length; r++)
+        		{
+        			if (index < vals.length)
+        			{
+        				if(c % 2 == 0)
+        					grid[r][c] = vals[index];
+        				else
+        					grid[rows - 1 - r][c] = vals[index];
+        				index++;
+        			}
+        		}
+        }
+        return grid;    
     }
     
     /**
@@ -131,7 +159,23 @@ public class TwoDArrayPractice
      */
     public static int[][] grow(int[][] mat, int newRows, int newCols)
     {
-        return null; // TODO: implement
+    	int [][] grid = new int[newRows][newCols];
+        int rIndex = 0;
+        int cIndex = 0;
+        for (int r = 0; r < mat.length; r++)
+        {
+        		for (int c = 0; c < mat[0].length; c++)
+        		{
+        			grid[rIndex][cIndex] = mat[r][c];
+        			cIndex++;
+        			if (cIndex == grid[0].length)
+        			{
+        				rIndex++;
+        				cIndex = 0;
+        			}
+        		}
+        }
+        return grid; 
     }
     
     /**
@@ -162,7 +206,15 @@ public class TwoDArrayPractice
             int startRow, int startCol,
             int endRow, int endCol)
     {
-        return null; // TODO: implement
+    	int [][] grid = new int[endRow - startRow + 1][endCol - startCol + 1];
+        for (int r = 0; r < grid.length; r++)
+        {
+        		for (int c = 0; c < grid[0].length; c++)
+        		{
+        			grid[r][c] = mat[startRow + r][startCol + c];
+        		}
+        }
+        return grid;     
     }
     
     /**
@@ -187,6 +239,14 @@ public class TwoDArrayPractice
      */
     public static int[][] invert(int[][] mat)
     {
-        return null; // TODO: implement
+    	int [][] grid = new int[mat[0].length][mat.length];
+    	for (int r = 0; r < grid.length; r++)
+        {
+        		for (int c = 0; c < grid[0].length; c++)
+        		{
+        			grid[r][c] = mat[c][r];
+        		}
+        }
+    	return grid;
     }
 }
