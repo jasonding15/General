@@ -8,7 +8,10 @@ import java.util.Random;
 */
 public class Die implements Measurable
 {
-   /**
+	private Random generator;
+	private int sides;
+	private int result;
+	/**
       Constructs a die with a given number of sides.
       @param s the number of sides, e.g. 6 for a normal die
    */
@@ -16,6 +19,7 @@ public class Die implements Measurable
    {
       sides = s;
       generator = new Random();
+      cast();
    }
 
    /**
@@ -24,13 +28,12 @@ public class Die implements Measurable
    */
    public int cast()
    {
-      return 1 + generator.nextInt(sides);
+      result =  1 + generator.nextInt(sides);
+      return result;
    }
    
-   private Random generator;
-   private int sides;
    public double getMeasure()
    {
-	   
+	   return result;
    }
 }
