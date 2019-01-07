@@ -8,7 +8,7 @@
 	<classpathentry kind="src" path="chapter5"/>
 	<classpathentry kind="src" path="chapter6"/>
 	<classpathentry kind="src" path="chapter7"/>
-	<classpathentry kind="src" path="chapter8"/>
+	<classpathentry kind="src" path="chapter9"/>
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
