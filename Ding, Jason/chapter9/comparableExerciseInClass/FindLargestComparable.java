@@ -15,6 +15,11 @@ public class FindLargestComparable
 		String strA = "span";
 		System.out.println("Largest String: " + findLargest(strC, strB, strA));
 		
+		Human hA = new Human("James", "upper", 130.0);
+		Human hB = new Human("Jamal", "upper", 120.0);
+		Human hC = new Human("Jones", "lower", 99.0);
+		System.out.println("Humans: " + findLargest(hA, hB, hC));
+
 		
 	}
 	
