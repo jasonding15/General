@@ -5,7 +5,7 @@ public class Jason_CM implements CharacterMaker
 	private char[] letters;
 	public Jason_CM()
 	{
-		letters = new char[] {'v', 'a', 'o', 'E', 'H'};
+		letters = new char[] {'J', 'a', 'o', 'E', 'H'};
 	}
 	public char[][] characterToAscii(char character)
 	{
@@ -27,19 +27,20 @@ public class Jason_CM implements CharacterMaker
 		return letters;
 	}
 
-	private char[][] createV()
+	private char[][] createJ()
 	{
-		char[][] arr = new char[10][10];
-		arr[1] = new char[] {
-		  __      __
-		 ( _\    /_ )
-		  \ _\  /_ / 
-		   \ _\/_ /_ _
-		   |_____/_/ /|
-		   (  (_)__)J-)
-		   (  /`.,   /
-		    \/  ;   /
-		     | === |
+		char[][] arr = new char[][]
+			   {{' ', '_', '_', '_', '_', '_', '_', '_', '_', ' '},
+				{'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
+				{'|', '_', '_', '_', ' ', ' ', '_', '_', '_', '|'},
+				{' ', ' ', ' ', '|', ' ', ' ', '|', ' ', ' ', ' '},
+				{' ', ' ', ' ', '|', ' ', ' ', '|', ' ', ' ', ' '},
+				{'_', '_', '_', '|', ' ', ' ', '|', ' ', ' ', ' '},
+				{'|', ' ', '|', '|', ' ', ' ', '|', ' ', ' ', ' '},
+				{'|', ' ', '\\','/', ' ', ' ', '|', ' ', ' ', ' '},
+				{'|', ' ', ' ', ' ', ' ', ' ', '|', ' ', ' ', ' '},
+				{'\\','_', '_', '_', '_', '_', '/', ' ', ' ', ' '}};
+		return arr;
 
 	}
 

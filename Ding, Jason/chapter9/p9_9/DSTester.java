@@ -8,7 +8,10 @@ public class DSTester
 		String str1 = "hello there";
 		DataSet ds = new DataSet(str1);
 		String str2 = "what is up";
+		ds.add(str2);
 		String str3 = "the sun! haha";
+		ds.add(str3);
+		System.out.println(ds.getMaximum());
 		
 	}
 
