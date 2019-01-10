@@ -5,15 +5,20 @@ import p9_1.Measurable;
 public class Quiz implements Measurable
 {
 	private String letterGrade;
-	private Integer score;
+	private double score;
 	public Quiz(String letterGrade, Integer score)
 	{
 		this.score = score;
 		this.letterGrade = letterGrade;
 	}
 	
-	public Integer getScore()
+	public double getMeasure()
 	{
 		return score;
+	}
+	
+	public String toString()
+	{
+		return letterGrade + ": " + score;
 	}
 }
