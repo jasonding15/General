@@ -9,10 +9,10 @@ public class DataSet
 	/**
 	 * Constructs an data set with one (the first) element.
 	 */
-	public DataSet(Comparable x)
+	public DataSet()
 	{
-		maximum = x;
-		minimum = x;
+		maximum = null;
+		minimum = null;
 	}
 
 	/**

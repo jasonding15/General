@@ -6,7 +6,8 @@ public class DSTester
 	public static void main(String[] args) 
 	{
 		String str1 = "hello there";
-		DataSet ds = new DataSet(str1);
+		DataSet ds = new DataSet();
+		ds.add(str1);
 		String str2 = "what is up";
 		ds.add(str2);
 		String str3 = "the sun! haha";
