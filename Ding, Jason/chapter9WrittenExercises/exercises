@@ -1,10 +1,10 @@
-R9.1 - A: no cast
-       B: need cast
+R9.1 - A: need cast
+       B: no cast
        C: need cast
-R9.2 - C does not work
-R9.3 - A, C, E
+R9.2 - all work
+R9.3 - A, C
 R9.4 - The class casting changes the methods that can be run on the variable, while the int cast changes the type of the variable.
-R9.6 - A, B, F
-R9.7 - r is a reference to an object different than its own
+R9.6 - A, B, F, G
+R9.7 - r is a reference to an object different than its own, you don't know which one would work.
 R9.9 - In 9.1, you first would have to make employee implement the Measureable interface.
-       In 9.4s, since it takes an object, you can just pass in employees, so it will be easier.
+       In 9.4s, since it takes an object, you can just pass in employees, but you would need to give it a measurer class.
