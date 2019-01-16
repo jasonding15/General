@@ -27,7 +27,7 @@ public class Jason_CM implements CharacterMaker
 		return letters;
 	}
 
-	private char[][] createJ()
+	public char[][] createJ()
 	{
 		char[][] arr = new char[][]
 			   {{' ', '_', '_', '_', '_', '_', '_', '_', '_', ' '},
