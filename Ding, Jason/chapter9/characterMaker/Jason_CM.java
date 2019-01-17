@@ -9,7 +9,10 @@ public class Jason_CM implements CharacterMaker
 	}
 	public char[][] characterToAscii(char character)
 	{
-		
+		if(character == 'J')
+			return createJ();
+		else
+			return null;
 	}
 	
 	public boolean characterSupported(char character)
