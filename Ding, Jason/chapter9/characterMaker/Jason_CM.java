@@ -103,7 +103,7 @@ public class Jason_CM implements CharacterMaker
 		return arr;
 	}
 	
-	public char[][] createR()
+	private char[][] createR()
 	{
 		char[][] arr = new char[][]
 				   {{' ', '_', '_', '_', '_', '_', '_', ' ', ' ', ' '},
