@@ -6,4 +6,9 @@ public class TimeDepositAccount extends BankAccount
 	{
 		super(initialBalance);
 	}
+	
+	public void addInterest()
+	{
+		
+	}
 }
