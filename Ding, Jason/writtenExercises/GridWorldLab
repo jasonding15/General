@@ -1,0 +1,4 @@
+set 7
+1. act, getActors, processActors, getMoveLocations, setMoveLocation, makeMove
+2. getActors, processActors, getMoveLocation, selectmoveLocation, makeMove
+3. No because the getActors class shouldn't be specific for every subclass.
