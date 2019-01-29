@@ -61,5 +61,5 @@ public class BankAccount
       other.deposit(amount);
    }
 
-   private double balance; 
+   protected double balance; 
 }
