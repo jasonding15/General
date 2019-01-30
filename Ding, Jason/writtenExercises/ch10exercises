@@ -1,0 +1,47 @@
+R10.2
+	constructors: double rate - defines the interest rate
+	methods inherited: getBalance and deposit and withdraw
+	methods added: addInterest
+R10.4
+	a superclass: employee sub: manager
+	b super: polygon sub: triangle
+	c super: student sub: graduatestudent
+	d super: person sub: student
+	e super: employee sub: graduatestudent
+	f super: bankaccount sub: checkingaccount
+	g super: vehicle sub: car
+	h super: vehicle sub: minivan 
+	i super: car sub: minivan
+	j super: vehicle sub: truck 
+R10.7
+									Vehicle 
+				Car   			Bicycle    	  Motorcycle			Truck
+		Coupe    	    Sedan 									PickupTruck
+	SportUtilityCar     Minivan
+R10.1
+	$5,500
+R10.3
+	yes you can convert from a super to subclass reference and convert from sub to superclass
+R10.5
+	a. illegal
+	b. legal 
+	c. illegal 
+	d. illegal 
+
+R10.9
+	return true: b, f, g
+R10.10
+	super keyword - followed by parentheses calls the superclass constructor, super.method calls a method defined in superclass
+	this keyword - calls a constructor defined in the current class, this.method() calls a method defined in current class 
+	both define which methods or classes to run
+R10.11
+	method g	
+R10.12 
+	late, early
+R10.14
+	instance fields, static fields, and static final fields should all be private
+R10.15
+	instance + static methods should be private
+R10.17
+	someone can change public instance fields
+	public static fields are less dangerous --> cannot be changed
