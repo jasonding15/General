@@ -15,11 +15,11 @@ public class DiskMover
         		return;
         }
         
-        int nonPeg = 0;
-        if (source + target == 3)
-        		nonPeg = 3;
-        else
-        		nonPeg = Math.abs(target - source);
+        int nonPeg = 6 - source - target;
+//        if (source + target == 3)
+//        		nonPeg = 3;
+//        else
+//        		nonPeg = Math.abs(target - source);
         
 //        System.out.println("Move peg " + source + " to peg " + target);
 
