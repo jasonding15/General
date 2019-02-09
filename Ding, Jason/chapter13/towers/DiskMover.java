@@ -21,10 +21,10 @@ public class DiskMover
         else
         		nonPeg = Math.abs(target - source);
         
-        System.out.println("Move peg " + source + " to peg " + target);
+//        System.out.println("Move peg " + source + " to peg " + target);
 
-        move(disks--, source, nonPeg);
-        move(1, source, nonPeg);
-        move(disks--, nonPeg, target);
+        move(disks - 1, source, nonPeg);
+        move(1, source, target);
+        move(disks - 1, nonPeg, target);
     }
 }
