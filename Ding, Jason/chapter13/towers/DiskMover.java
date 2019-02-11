@@ -4,7 +4,7 @@ public class DiskMover
 {
 	public static void main(String[] args)
 	{
-		move(3, 1, 3);
+		move(5, 2, 3);
 	}
 	
     public static void move(int disks, int source, int target)
@@ -24,7 +24,8 @@ public class DiskMover
 //        System.out.println("Move peg " + source + " to peg " + target);
 
         move(disks - 1, source, nonPeg);
-        move(1, source, target);
+//        move(1, source, target);
+        System.out.println("Move peg " + source + " to peg " + target);
         move(disks - 1, nonPeg, target);
     }
 }

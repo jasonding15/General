@@ -13,7 +13,15 @@ public class SubstringGenerator
 	{
 		ArrayList<String> arr = new ArrayList<String>();
 		if (x.length() == 0)
+		{
 			arr.add("");
+			return arr;
+		}
+		
+		for (int i = 0; i < x.length(); i++)
+		{
+			
+		}
 		
 		
 	}
