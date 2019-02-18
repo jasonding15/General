@@ -1,0 +1,5 @@
+2. 	if the first element is less than the second, return an array without the second element. Else return 
+	arr starting with second element. basecase should be if the length equals two, return the smallest of the numbers.
+	This would return an array with one int (the smallest) in it.
+4. 	header would return an arrayList and take in n as parameter. add n + method with n-1 as parameter. 
+	base case should be if n = 1 return an arraylist with the int 1
