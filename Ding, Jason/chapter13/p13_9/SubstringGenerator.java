@@ -6,7 +6,7 @@ public class SubstringGenerator
 {
 	public static void main(String[] args)
 	{
-		
+		System.out.println(getSubstrings("rum"));
 	}
 
 	public static ArrayList<String> getSubstrings(String x)
@@ -18,10 +18,17 @@ public class SubstringGenerator
 			return arr;
 		}
 		
-		for (int i = 0; i < x.length(); i++)
+		for(int i = 0; i <= x.length(); i++)
+			arr.add(x.substring(0, i));
+		
+		for(int i = 1; i < x.length(); i++)
 		{
-			
+			ArrayList<String> shorterSubstrings = getSubstrings(x.substring(i));
+			for(String shorterSubstring : shorterSubstrings)
+				arr.add(shorterSubstring);
 		}
+		
+		return arr;
 		
 		
 	}

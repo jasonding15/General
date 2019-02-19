@@ -19,6 +19,9 @@ public class FindLargest
 			return 0;
 		if (a.length == 1)
 			return a[0];
-		return Math.max(a[start], findLargest(a, start - 1));
+		if (a[start] > findLargest(a, start - 1))
+			return a[start];
+		else 
+			return findLargest(a, start - 1);
 	}
 }
