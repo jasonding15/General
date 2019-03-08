@@ -10,21 +10,17 @@ public class SelectionSort
 	}
 	public static void sort(int[] x)
     {
-    		for(int i = 0; i < x.length; i++)
-    		{
-    			int smallest = x[i];
-    			int index = i;
-    			for(int a = i; a < x.length; a++)
-    			{
-    				if (x[a] < smallest)
-    				{
-    					smallest = x[a];
-    					index = a;
-    				}
-    			}
-    			swap(x, i, index);
-    		}
-//		sort(x, 0);
+//    		for(int i = 0; i < x.length - 1; i++)
+//    		{
+//    			int index = i;
+//    			for(int a = i + 1; a < x.length; a++)
+//    			{
+//    				if (x[a] < x[index])
+//    					index = a;
+//    			}
+//    			swap(x, i, index);
+//    		}
+		sort(x, 0);
     }
     
     private static void swap(int[] x, int i, int j)
@@ -37,17 +33,21 @@ public class SelectionSort
     // recursive variant sorts x[start] ... x[x.length - 1]
     private static void sort(int[] x, int start)
     {
-    		if (start == x.length)
+    		if (start >= x.length - 1)
     			return;
+    		swap(x, start, indexOfMin(x, start));
+    		sort(x, start + 1);
+    		
     		
     }
     
     private static int indexOfMin(int[] x, int start)
     {
-    		if (start == x.length)
-    			return start - 1;
-    		if (x[start] < x[indexOfMin(x, start + 1)])
+    		if (start == x.length - 1)
     			return start;
-    		return indexOfMin(x, start + 1);    		
+    		int position = indexOfMin(x, start + 1);
+    		if (x[start] < x[position])
+    			return start;
+    		return position;    		
     }
 }
