@@ -2,3 +2,21 @@ set 7
 1. act, getActors, processActors, getMoveLocations, setMoveLocation, makeMove
 2. getActors, processActors, getMoveLocation, selectmoveLocation, makeMove
 3. No because the getActors class shouldn't be specific for every subclass.
+4. color, direction, location
+5. getLocation: returns location of the critter, getDirection returns the direction of the critter (N,S,E,W)
+   makeMove moves the critter to the desired spot
+6. because there is always a default constructor in the subclasses
+
+set 8
+1. the act method does not work for the ChameleonCritter but the class overrides the processActors and makeMove methods. 
+   This creates a different behavior than usual without overriding.
+2. because it uses the makeMove method of Critter and in order to do so it uses super.makeMove
+3. make the makeMove method hold a value of the Critter's current position and if Critter makes a new move it will place a flower at the 
+   position that it was previously held
+4. it doesn't need to override the method becauseCritter already takes care of it so as long as ChameleonCritter does not change that it 
+   will not need to override
+5. actor and all its subclasses
+6. by calling getGrid which is inherited from Actor
+
+set 9 
+1. there is no need to override
