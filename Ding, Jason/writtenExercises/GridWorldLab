@@ -19,4 +19,15 @@ set 8
 6. by calling getGrid which is inherited from Actor
 
 set 9 
-1. there is no need to override
+1. there is no need to override because both methods are supposed to do the same thing
+2. getActors method only looks for neighbors that are immediately in front of the crab critter and to its right-front and left-front locations
+   these positions are the ones that get eaten
+3. The method getLocationsInDirections uses this array to determine and return valid adjacent locations of this critter in the directions 
+   given by the array parameter. 
+4. (4,3), (4,4), and (4,5) 
+5. Similarities: They both randomly choose their next location from their list of possible move locations.
+   Differences: A crab critter will only move to its left or its right. A critter’s possible move locations are any of its eight
+   adjacent neighboring locations. When a critter cannot move, it does not turn, but crab critter does
+6. If the parameter loc in makeMove is equal to the crab critter’s current location, it turns instead of moving
+7. A crab critter inherits the processActors method from the Critter class. CrabCritter is a Critter, a crab critter will not eat any other
+   critter. 
