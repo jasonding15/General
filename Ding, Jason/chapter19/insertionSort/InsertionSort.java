@@ -2,7 +2,12 @@ package insertionSort;
 
 public class InsertionSort
 {
-    public static void sort(int[] x)
+    public static void main(String args[])
+    {
+    		int[] arr = new int[] {0, 1, 2, 3, 5, 6};
+    		System.out.println(binarySearch(arr, 4));
+    }
+	public static void sort(int[] x)
     {
         for (int i = 1; i < x.length; i++)
         {
@@ -15,7 +20,6 @@ public class InsertionSort
         		}
         		x[index] = temp;
         }
-       
     }
     
     public static void recursiveSort(int[] x)
@@ -30,12 +34,20 @@ public class InsertionSort
 
     public static int binarySearch(int[] x, int key)
     {
-        return -1;
+        return binarySearch(x, key, 0, x.length - 1);
     }
 
     private static int binarySearch(int[] x, int key, int start, int end)
     {
-        return -1;
+    		if (start > end)
+    			return start * -1 - 1;
+    		int mid = (start + end) / 2;
+    		if (x[mid] == key)
+    			return mid;
+    		if (x[mid] > key)
+    			return binarySearch(x, key, start, end - 1);
+    		else
+    			return binarySearch(x, key, start + 1, end);
     }
 
     // recursive variant sorts x[start] ... x[x.length - 1]
@@ -47,6 +59,6 @@ public class InsertionSort
     // inserts value into correct position in x[0]...x[start]
     private static void insert(int[] x, int value, int start)
     {
-        
+    		
     }
 }
