@@ -19,6 +19,14 @@ public class MergeSort
 
 	static void merge(int[] a, int low, int mid, int high)
 	{
+		int[] x = new int[(low + high) / 2];
+		int[] y = new int[x.length];
+		for(int i = 0; i < x.length; i++)
+		{
+			x[i] = a[i];
+			y[i + mid] = a[i + mid];
+		}
 		
+//		a[i] = Math.max(x[i], y[i]);
 	}
 }
