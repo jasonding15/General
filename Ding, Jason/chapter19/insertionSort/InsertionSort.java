@@ -4,8 +4,9 @@ public class InsertionSort
 {
     public static void main(String args[])
     {
-    		int[] arr = new int[] {0, 1, 2, 3, 5, 6};
-    		System.out.println(binarySearch(arr, 4));
+    		int[] arr = new int[] {6, 5, 4, 3};
+    		sortWithBinarySearch(arr);
+    		System.out.println(arr);
     }
 	public static void sort(int[] x)
     {
@@ -29,7 +30,17 @@ public class InsertionSort
 
     public static void sortWithBinarySearch(int[] x)
     {
-        
+    	  for (int i = 1; i < x.length; i++)
+          {
+          		int n = binarySearch(x, x[i], 0, i);
+          		int index = i;
+          		while (index >= n)
+          		{
+      				x[index] = x[index - 1];
+          			index--;
+          		}
+          		x[index] = x[i];
+          }
     }
 
     public static int binarySearch(int[] x, int key)
