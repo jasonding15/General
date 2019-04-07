@@ -21,5 +21,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="src" path="magpie_lab"/>
 	<classpathentry kind="src" path="gridworld"/>
+	<classpathentry kind="src" path="pictures_lab"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
