@@ -8,7 +8,7 @@ Activity 2:
 2. R:255, G:255, B:0
 3. R:120, G:0, B:255
 4. All 255
-5. R:50, G:50, B:50
+5. R:51, G:51, B:51
 
 Activity 3:
 1. 0
@@ -20,5 +20,18 @@ Activity 3:
 7. Yes, the squares are visible.
 
 Exercises:
+1. //    Picture pix = new Picture("beach.jpg");    
+    Picture pix = new Picture("flower1.jpg");
+2. //    Picture pix = new Picture("beach.jpg");    
+//    Picture pix = new Picture("flower1.jpg");
+    Picture pix = new Picture("wedizzy.jpg");
 
 Activity 5:
+1. No, no it is not.
+2. Yes, indeed it is. 
+3. No, DigitalPrinter is an interface and you cannot instantiate an interface.
+4. Yes, Picture extends SimplePicture, which means in implements DigitalPrinter.
+5. 
+6.
+7.
+
