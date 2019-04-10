@@ -31,7 +31,7 @@ Activity 5:
 2. Yes, indeed it is. 
 3. No, DigitalPrinter is an interface and you cannot instantiate an interface.
 4. Yes, Picture extends SimplePicture, which means in implements DigitalPrinter.
-5. 
-6.
-7.
+5. Yes, as picture implements DigitalPicture.
+6. Yes, because Picture is a subclass of SimplePicture.
+7. No, because SimplePicture is a superclass of Picture.
 

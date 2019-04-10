@@ -16,9 +16,6 @@ public class BlusterCritter extends Critter
 		super();
 		courageFactor = c;
 	}
-
- 
-
  
 	public ArrayList<Actor> getActors()
 	{
@@ -38,6 +35,7 @@ public class BlusterCritter extends Critter
 			}
 		return actors;
 	} 
+	
 	public void processActors(ArrayList<Actor> actors)
 	{
 		int count = 0;
@@ -48,7 +46,8 @@ public class BlusterCritter extends Critter
 			lighten();
 		else
 			darken();
-	 }
+	}
+	
 	private void darken()
 	{
 		Color c = getColor();
@@ -63,6 +62,7 @@ public class BlusterCritter extends Critter
 			blue--;
 		setColor(new Color(red, green, blue));
 	 } 
+	
 	 private void lighten()
 	 {
 		 Color c = getColor();

@@ -1,6 +1,6 @@
 package critters;
+
 import info.gridworld.actor.Actor;
-import info.gridworld.actor.Critter;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 import java.awt.Color;
@@ -13,23 +13,23 @@ public class QuickCrab extends CrabCritter
 		setColor(Color.CYAN);
 	} 
 
-	 public ArrayList<Location> getMoveLocations()
-	 {
-		 ArrayList<Location> locs = new ArrayList<Location>();
-		 Grid g = getGrid();
+	public ArrayList<Location> getMoveLocations()
+	{
+		ArrayList<Location> locs = new ArrayList<Location>();
+		Grid<Actor> g = getGrid();
 
-		 addIfGoodTwoAwayMove(locs,getDirection() + Location.LEFT);
-		 addIfGoodTwoAwayMove(locs,getDirection() + Location.RIGHT);
+		addIfGoodTwoAwayMove(locs,getDirection() + Location.LEFT);
+		addIfGoodTwoAwayMove(locs,getDirection() + Location.RIGHT);
 
-		 if (locs.size() == 0)
-		 		return super.getMoveLocations();
+		if (locs.size() == 0)
+			return super.getMoveLocations();
 
-		 return locs;
+		return locs;
 	 }
 
 	 private void addIfGoodTwoAwayMove(ArrayList<Location> locs,int dir)
 	 {
-		 Grid g = getGrid();
+		 Grid<Actor> g = getGrid();
 		 Location loc = getLocation();
 		 
 		 Location temp = loc.getAdjacentLocation(dir);
@@ -41,5 +41,4 @@ public class QuickCrab extends CrabCritter
 				 locs.add(loc2);
 		 }
 	 }
-	 
 }
