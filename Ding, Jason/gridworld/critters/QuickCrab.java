@@ -16,7 +16,6 @@ public class QuickCrab extends CrabCritter
 	public ArrayList<Location> getMoveLocations()
 	{
 		ArrayList<Location> locs = new ArrayList<Location>();
-		Grid<Actor> g = getGrid();
 
 		addIfGoodTwoAwayMove(locs,getDirection() + Location.LEFT);
 		addIfGoodTwoAwayMove(locs,getDirection() + Location.RIGHT);
