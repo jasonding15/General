@@ -128,10 +128,10 @@ public class Picture extends SimplePicture
 	  for(Pixel[] rowArray : pixels)
 		  for(Pixel obj : rowArray)
 		  {
-			  double avg = (obj.getAverage());
-			  obj.setRed((int) avg);
-			  obj.setGreen((int) avg);
-			  obj.setBlue((int) avg);
+			  int avg = (int) (obj.getAverage());
+			  obj.setRed(avg);
+			  obj.setGreen(avg);
+			  obj.setBlue(avg);
 
 		  }
   }
@@ -142,7 +142,8 @@ public class Picture extends SimplePicture
 	  for(Pixel[] rowArray : pixels)
 		  for(Pixel obj : rowArray)
 		  {
-			  obj.setRed(obj.getRed() * 4);
+			  obj.setRed(obj.getRed() * 5);
+			  obj.setGreen(obj.getGreen() / 2);
 		  }
   }
   

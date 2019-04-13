@@ -41,7 +41,14 @@ public class ChameleonCritter extends Critter
         int n = actors.size();
         if (n == 0)
         {
-        	darken();
+            Color col = getColor();
+            
+            double factor = 0.9;
+            int red = (int) (col.getRed() * factor);
+            int green = (int) (col.getGreen() * factor);
+            int blue = (int) (col.getBlue() * factor);
+            
+            setColor(new Color(red, green, blue));
             return;
         }
         int r = (int) (Math.random() * n);
@@ -49,15 +56,6 @@ public class ChameleonCritter extends Critter
         Actor other = actors.get(r);
         setColor(other.getColor());
     }
-    
-    private void darken()
-    {
-     Color c = getColor();
-     int red = (int) (c.getRed() * (1 - .05));
-     int green = (int) (c.getGreen() * (1 - .05));
-     int blue = (int) (c.getBlue() * (1 - .05));
-     setColor(new Color(red, green, blue));
-    } 
 
     /**
      * Turns towards the new location as it moves.
