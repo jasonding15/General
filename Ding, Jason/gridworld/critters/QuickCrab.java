@@ -1,43 +1,40 @@
 package critters;
 
-import info.gridworld.actor.Actor;
-import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
-import java.awt.Color;
 import java.util.ArrayList; 
 
 public class QuickCrab extends CrabCritter
 {
-	public QuickCrab()
-	{
-		setColor(Color.CYAN);
-	} 
 
 	public ArrayList<Location> getMoveLocations()
 	{
 		ArrayList<Location> locs = new ArrayList<Location>();
+		
+        Location currentLoc = getLocation();
+        
+        if (getDirection() == Location.EAST || getDirection() == Location.WEST)
+        {
+        	Location locLeft = new Location(currentLoc.getCol(), currentLoc.getRow() - 2);
+        	if (getGrid().get(locLeft) == null)
+                locs.add(locLeft);
+        	
+        	Location locRight = new Location(currentLoc.getCol(), currentLoc.getRow() + 2);
+        	if (getGrid().get(locRight) == null)
+                locs.add(locRight);
+        }
+        
+        if(getDirection() == Location.SOUTH || getDirection() == Location.NORTH)
+        {
+        	Location locLeft = new Location(currentLoc.getCol() - 2, currentLoc.getRow());
+        	if (getGrid().get(locLeft) == null)
+                locs.add(locLeft);
+        	
+        	Location locRight = new Location(currentLoc.getCol() + 2, currentLoc.getRow());
+        	if (getGrid().get(locRight) == null)
+                locs.add(locRight);
+        }
+       
 
-		addIfGoodTwoAwayMove(locs,getDirection() + Location.LEFT);
-		addIfGoodTwoAwayMove(locs,getDirection() + Location.RIGHT);
-
-		if (locs.size() == 0)
-			return super.getMoveLocations();
-
-		return locs;
-	 }
-
-	 private void addIfGoodTwoAwayMove(ArrayList<Location> locs,int dir)
-	 {
-		 Grid<Actor> g = getGrid();
-		 Location loc = getLocation();
-		 
-		 Location temp = loc.getAdjacentLocation(dir);
-
-		 if(g.isValid(temp) && g.get(temp) == null)
-		 {
-			 Location loc2 = temp.getAdjacentLocation(dir);
-			 if(g.isValid(loc2) && g.get(loc2)== null)
-				 locs.add(loc2);
-		 }
+        return locs;
 	 }
 }

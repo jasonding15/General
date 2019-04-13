@@ -8,12 +8,12 @@ import java.awt.Color;
 
 public class BlusterCritter extends Critter
 {
-	private int courageFactor;
+	private int courageLevel;
 
 	public BlusterCritter(int c)
 	{
 		super();
-		courageFactor = c;
+		courageLevel = c;
 	}
  
 	public ArrayList<Actor> getActors()
@@ -24,10 +24,10 @@ public class BlusterCritter extends Critter
 		for(int r = loc.getRow() - 2; r <= loc.getRow() + 2; r++ )
 			for(int c = loc.getCol() - 2; c <= loc.getCol() + 2; c++)
 			{
-				Location tempLoc = new Location(r,c);
-				if(getGrid().isValid(tempLoc))
+				Location temp = new Location(r,c);
+				if(getGrid().isValid(temp))
 				{
-					Actor a = getGrid().get(tempLoc);
+					Actor a = getGrid().get(temp);
 					if(a != null && a != this)
 						actors.add(a);
 				}
@@ -41,7 +41,8 @@ public class BlusterCritter extends Critter
 		for(Actor a: actors)
 			if(a instanceof Critter)
 				count++;
-		if(count < courageFactor)
+		
+		if(count < courageLevel)
 			lighten();
 		else
 			darken();
@@ -49,31 +50,33 @@ public class BlusterCritter extends Critter
 	
 	private void darken()
 	{
+		double f = 0.9;
 		Color c = getColor();
 		int red = c.getRed();
 		int green = c.getGreen();
 		int blue = c.getBlue();
 		if(red > 0) 
-			red--;
+			red *= f;
 		if(green > 0) 
-			green--;
+			green *= f;
 		if(blue > 0) 
-			blue--;
+			blue*= f;
 		setColor(new Color(red, green, blue));
 	 } 
 	
 	 private void lighten()
 	 {
+		 double f = 1.1;
 		 Color c = getColor();
 		 int red = c.getRed();
 		 int green = c.getGreen();
 		 int blue = c.getBlue();
 		 if(red < 255) 
-			 red++;
+			 red *= f;
 		 if(green < 255) 
-			 green++;
+			 green *= f;
 		 if(blue < 255)
-	 		blue++;
+	 		blue *= f;
 	 	setColor(new Color(red, green, blue));
 	 } 
 }

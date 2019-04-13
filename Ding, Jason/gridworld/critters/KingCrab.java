@@ -2,51 +2,35 @@ package critters;
 
 import info.gridworld.actor.Actor;
 import info.gridworld.grid.Location;
-import java.awt.Color;
 import java.util.ArrayList;
 
 public class KingCrab extends CrabCritter
 {
-	public KingCrab()
-	{
-		setColor(Color.PINK);
-	}
-
-	public int distanceFrom(Location loc1, Location loc2)
-	{
-		int x1 = loc1.getRow();
-		int y1 = loc1.getCol();
-		int x2 = loc2.getRow();
-		int y2 = loc2.getCol();
-		double dist = Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2)) + .5;
-		
-		return (int)Math.floor(dist);
-	} 
-	
-	private boolean moveOneMoreAway(Actor a)
- 	{
-		ArrayList<Location> locations = getGrid().getEmptyAdjacentLocations(a.getLocation());
-
-		for(Location loc:locations)
-		{
-			if(distanceFrom(getLocation(), loc) > 1)
-			{
-				a.moveTo(loc);
-				return true;
-			}
-		}
-
-		return false;
- 	}
 
 	public void processActors(ArrayList<Actor> actors)
 	{
 		for (Actor a : actors)
 		{
-			if (!moveOneMoreAway(a))
+			boolean hasMoved = false;
+			ArrayList<Location> locations = getGrid().getEmptyAdjacentLocations(a.getLocation());
+
+			for(Location loc:locations)
 			{
-				a.removeSelfFromGrid();
+				if(distanceFrom(getLocation(), loc) > 1)
+				{
+					a.moveTo(loc);
+					hasMoved = true;
+				}
 			}
+			
+			if (hasMoved == false)
+				a.removeSelfFromGrid();
 		}
 	}
+	
+	public int distanceFrom(Location loc1, Location loc2)
+	{
+		return (int)Math.sqrt(Math.pow((loc1.getRow() - loc2.getRow()), 2) + Math.pow((loc1.getCol() - loc2.getCol()), 2));
+	} 
+	
 } 
