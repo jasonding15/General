@@ -22,5 +22,13 @@
 	<classpathentry kind="src" path="magpie_lab"/>
 	<classpathentry kind="src" path="gridworld"/>
 	<classpathentry kind="src" path="pictures_lab"/>
+	<classpathentry kind="src" path="processing"/>
+	<classpathentry kind="lib" path="libraries/core.jar"/>
+	<classpathentry kind="lib" path="libraries/finch.jar"/>
+	<classpathentry kind="lib" path="libraries/gridworld.jar"/>
+	<classpathentry kind="lib" path="libraries/gstreamer-java.jar"/>
+	<classpathentry kind="lib" path="libraries/jna.jar"/>
+	<classpathentry kind="lib" path="libraries/jnaerator-0.9.5.jar"/>
+	<classpathentry kind="lib" path="libraries/video.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
