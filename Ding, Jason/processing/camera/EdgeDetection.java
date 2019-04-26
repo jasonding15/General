@@ -54,19 +54,31 @@ public class EdgeDetection extends PApplet
         editedFrame.loadPixels();
         cam.loadPixels();
         
-        for(int i = 0; i < editedFrame.pixels.length - 1; i++)
+      int threshold = 10;
+
+//        for(int i = 0; i < editedFrame.pixels.length - 1; i++)
+//        {
+//            int pixel = cam.pixels[i];
+//            float average = (red(pixel) + green(pixel) + blue(pixel)) / 3;
+//            
+//            int otherPixel = cam.pixels[i + 1];
+//            float avg = (red(otherPixel) + green(otherPixel) + blue(otherPixel)) / 3;
+//            
+//            if(Math.abs(average - avg) < threshold)
+//                editedFrame.pixels[i] = color(255, 255, 255);
+//            else
+//            	editedFrame.pixels[i] = color(0);
+//        }
+        
+        for (int i = 0; i < editedFrame.pixels.length - 1; i++)
         {
-            int pixel = cam.pixels[i];
-            float average = (red(pixel) + green(pixel) + blue(pixel)) / 3;
-            
-            int otherPixel = cam.pixels[i + 1];
-            float avg = (red(otherPixel) + green(otherPixel) + blue(otherPixel)) / 3;
-            
-            int threshold = 10;
-            if(Math.abs(average - avg) < threshold)
-                editedFrame.pixels[i] = color(255, 255, 255);
-            else
-            	editedFrame.pixels[i] = color(0);
+        	int pixel = cam.pixels[i];
+        	int otherPix = cam.pixels[i + 1];
+        	if (Math.abs(red(pixel) - red(otherPix)) + Math.abs(blue(pixel) - blue(otherPix)) + 
+        			Math.abs(green(pixel) - green(otherPix)) > threshold)
+        		editedFrame.pixels[i] = color(255);
+        	else
+        		editedFrame.pixels[i] = color(255 - red(pixel), 255 - blue(pixel), 255 - green(pixel));
         }
         
         editedFrame.updatePixels();
