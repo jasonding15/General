@@ -16,6 +16,7 @@
 	<classpathentry kind="src" path="chapter10"/>
 	<classpathentry kind="src" path="chapter13"/>
 	<classpathentry kind="src" path="chapter19"/>
+	<classpathentry kind="src" path="finalProject"/>
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>

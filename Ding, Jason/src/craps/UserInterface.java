@@ -72,12 +72,12 @@ public class UserInterface {
 	
 	public void rollDice()
 	{
-		System.out.print("Now, please press the space bar to roll the dice!");
+		System.out.print("Now, please press enter to roll the dice!");
 		String answer = fromKeyboard.nextLine();
 		
-		while( ! answer.equals(" ") )
+		while( ! answer.equals("") )
 		{
-			System.out.print("Bruh people be waitin for you. Please roll the dice by pressing space already!: ");
+			System.out.print("Bruh people be waitin for you. Please roll the dice by pressing return!: ");
 			answer = fromKeyboard.nextLine();
 		}
 		int sum = craps.rollDie();
@@ -93,7 +93,7 @@ public class UserInterface {
 
 	private void handleEndGame() 
 	{
-		System.out.println("Game over!");
+		System.out.print("Game over! . . . ");
 		craps.resolveBets();
 		if (craps.hasWon())
 		{
@@ -105,12 +105,12 @@ public class UserInterface {
 	
 	public void continueGame()
 	{
-		System.out.print("Press the space bar to roll again!: ");
+		System.out.print("Press enter to roll again!: ");
 		String answer = fromKeyboard.nextLine();
 		
-		while (! answer.equals(" "))
+		while (! answer.equals(""))
 		{
-			System.out.println("Please press the space to roll the dice NOW!: ");
+			System.out.println("Please press enter to roll the dice NOW!: ");
 			answer = fromKeyboard.nextLine();
 		}
 		
