@@ -1,6 +1,7 @@
 package brailleKeypad;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BrailleLetter 
 {
@@ -29,10 +30,27 @@ public class BrailleLetter
 	
 	public String getLetter()
 	{	
-		if(arr == getA()) // comparing error
+		if(Arrays.deepEquals(arr, getA())) // comparing error
 			return "A";
-		return "";
+		if(Arrays.deepEquals(arr, getB()))
+			return "B";
+		if(Arrays.deepEquals(arr, getC()))
+			return "C";	
+		if(Arrays.deepEquals(arr, getD()))
+			return "D";
+		if(Arrays.deepEquals(arr, getE()))
+			return "E";
+		if(Arrays.deepEquals(arr, getF()))
+			return "F";
+		if(Arrays.deepEquals(arr, getG()))
+			return "G";
+		if(Arrays.deepEquals(arr, getH()))
+			return "H";
+		if(Arrays.deepEquals(arr, getI()))
+			return "I";
+		return "Not a letter";
 	}
+	
 	
 	public boolean[][] getA()
 	{
@@ -41,13 +59,132 @@ public class BrailleLetter
 							{false, false},
 							{false, false}};
 		return arr;
-		
-		
 	}
 	
 	public boolean[][] getB()
 	{
 		boolean[][] arr = { {true, false},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getC()
+	{
+		boolean[][] arr = { {true, true},
+							{false, false},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getD()
+	{
+		boolean[][] arr = { {true, true},
+							{false, true},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getE()
+	{
+		boolean[][] arr = { {true, false},
+							{false, true},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getF()
+	{
+		boolean[][] arr = { {true, true},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getG()
+	{
+		boolean[][] arr = { {true, true},
+							{true, true},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getH()
+	{
+		boolean[][] arr = { {true, false},
+							{true, true},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getI()
+	{
+		boolean[][] arr = { {false, true},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getJ()
+	{
+		boolean[][] arr = { {false, true},
+							{true, true},
+							{false, false}};
+		return arr;
+	}
+	
+	public boolean[][] getK()
+	{
+		boolean[][] arr = { {true, false},
+							{false, false},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getL()
+	{
+		boolean[][] arr = { {true, false},
+							{true, false},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getM()
+	{
+		boolean[][] arr = { {true, true},
+							{false, false},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getN() // left off here
+	{
+		boolean[][] arr = { {true, true},
+							{false, true},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getO()
+	{
+		boolean[][] arr = { {false, true},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	public boolean[][] getP()
+	{
+		boolean[][] arr = { {false, true},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	public boolean[][] getQ()
+	{
+		boolean[][] arr = { {false, true},
+							{true, false},
+							{false, false}};
+		return arr;
+	}
+	public boolean[][] getR()
+	{
+		boolean[][] arr = { {false, true},
 							{true, false},
 							{false, false}};
 		return arr;
