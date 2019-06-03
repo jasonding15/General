@@ -48,6 +48,52 @@ public class BrailleLetter
 			return "H";
 		if(Arrays.deepEquals(arr, getI()))
 			return "I";
+		if(Arrays.deepEquals(arr, getJ()))
+			return "J";
+		if(Arrays.deepEquals(arr, getK()))
+			return "K";
+		if(Arrays.deepEquals(arr, getL()))
+			return "L";
+		if(Arrays.deepEquals(arr, getM()))
+			return "M";
+		if(Arrays.deepEquals(arr, getN()))
+			return "N";
+		if(Arrays.deepEquals(arr, getO()))
+			return "O";
+		if(Arrays.deepEquals(arr, getP()))
+			return "P";
+		if(Arrays.deepEquals(arr, getQ()))
+			return "Q";
+		if(Arrays.deepEquals(arr, getR()))
+			return "R";
+		if(Arrays.deepEquals(arr, getS()))
+			return "S";
+		if(Arrays.deepEquals(arr, getT()))
+			return "T";
+		if(Arrays.deepEquals(arr, getU()))
+			return "U";
+		if(Arrays.deepEquals(arr, getV()))
+			return "V";
+		if(Arrays.deepEquals(arr, getW()))
+			return "W";
+		if(Arrays.deepEquals(arr, getX()))
+			return "X";
+		if(Arrays.deepEquals(arr, getY()))
+			return "Y";
+		if(Arrays.deepEquals(arr, getZ()))
+			return "Z";
+		if(Arrays.deepEquals(arr, getExcalamationPoint()))
+			return "!";
+		if(Arrays.deepEquals(arr, getPeriod()))
+			return ".";
+		if(Arrays.deepEquals(arr, getSemicolon()))
+			return ";";
+		if(Arrays.deepEquals(arr, getQuestionMark()))
+			return "?";
+		if(Arrays.deepEquals(arr, getComma()))
+			return ",";
+		
+		
 		return "Not a letter";
 	}
 	

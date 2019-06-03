@@ -17,7 +17,7 @@ public class BrailleLetterUI
 		System.out.println("Enter your response. 0 to end the letter, another to end the word: ");
 		String str = fromKeyboard.nextLine();
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-		while(! str.substring(str.length() - 3).equals("000"))
+		while(str.length() < 3 || ! str.substring(str.length() - 3).equals("000"))
 		{
 			System.out.println("Invalid input, pls end with 3 0s : ");
 			str = fromKeyboard.nextLine();
@@ -54,16 +54,23 @@ public class BrailleLetterUI
 		ArrayList<Integer> arr = introduction();
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		int i = 0;
-		System.out.println("You typed : ");
+		System.out.println("You typed: ");
 		while(arr.get(i) != 0 && arr.get(i + 1) != 0 && arr.get(i + 2) != 0) //end of sentence
 		{
+			System.out.println("got here");
+
 			temp.add(arr.get(i));
-			if(temp.get(temp.size() - 1) == 0 && temp.get(temp.size() - 2) == 0)//end of word
+			
+			if(i >= 2 && temp.get(temp.size() - 1) == 0 && temp.get(temp.size() - 2) == 0)//end of word
 			{
+				for(int b = 0; b < temp.size(); b++)
+					System.out.print(temp.get(b));
 				getWord(temp);
 				temp.clear();
 			}
-			i++;
+			i += 1;
+			for(int b = 0; b < arr.size(); b++) // for testing
+				System.out.print(arr.get(b));
 		}
 	}
 }
