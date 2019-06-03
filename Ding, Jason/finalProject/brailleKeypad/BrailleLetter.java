@@ -30,7 +30,7 @@ public class BrailleLetter
 	
 	public String getLetter()
 	{	
-		if(Arrays.deepEquals(arr, getA())) // comparing error
+		if(Arrays.deepEquals(arr, getA())) 
 			return "A";
 		if(Arrays.deepEquals(arr, getB()))
 			return "B";
@@ -154,7 +154,7 @@ public class BrailleLetter
 							{true, false}};
 		return arr;
 	}
-	public boolean[][] getN() // left off here
+	public boolean[][] getN() 
 	{
 		boolean[][] arr = { {true, true},
 							{false, true},
@@ -163,34 +163,136 @@ public class BrailleLetter
 	}
 	public boolean[][] getO()
 	{
-		boolean[][] arr = { {false, true},
-							{true, false},
-							{false, false}};
+		boolean[][] arr = { {true, false},
+							{false, true},
+							{true, false}};
 		return arr;
 	}
 	public boolean[][] getP()
 	{
-		boolean[][] arr = { {false, true},
+		boolean[][] arr = { {true, true},
 							{true, false},
-							{false, false}};
+							{true, false}};
 		return arr;
 	}
 	public boolean[][] getQ()
 	{
-		boolean[][] arr = { {false, true},
-							{true, false},
-							{false, false}};
+		boolean[][] arr = { {true, true},
+							{true, true},
+							{true, false}};
 		return arr;
 	}
 	public boolean[][] getR()
 	{
+		boolean[][] arr = { {true, false},
+							{true, true},
+							{true, false}};
+		return arr;
+	}
+	
+	public boolean[][] getS()
+	{
 		boolean[][] arr = { {false, true},
+							{true, false},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getT()
+	{
+		boolean[][] arr = { {false, true},
+							{true, true},
+							{true, false}};
+		return arr;
+	}
+	public boolean[][] getU()
+	{
+		boolean[][] arr = { {true, false},
+							{false, false},
+							{true, true}};
+		return arr;
+	}
+	public boolean[][] getV()
+	{
+		boolean[][] arr = { {true, false},
+							{true, false},
+							{true, true}};
+		return arr;
+	}
+	public boolean[][] getW()
+	{
+		boolean[][] arr = { {false, true},
+							{true, true},
+							{false, true}};
+		return arr;
+	}
+	public boolean[][] getX()
+	{
+		boolean[][] arr = { {true, true},
+							{false, false},
+							{true, true}};
+		return arr;
+	}
+	public boolean[][] getY()
+	{
+		boolean[][] arr = { {true, true},
+							{false, true},
+							{true, true}};
+		return arr;
+	}
+	public boolean[][] getZ()
+	{
+		boolean[][] arr = { {true, false},
+							{false, true},
+							{true, true}};
+		return arr;
+	}
+	
+	public boolean[][] getNumberSign()
+	{
+		boolean[][] arr = { {false, true},
+							{false, true},
+							{true, true}};
+		return arr;
+	}
+	
+	public boolean[][] getPeriod()
+	{
+		boolean[][] arr = { {false, false},
+							{true, true},
+							{false, true}};
+		return arr;
+	}
+	
+	public boolean[][] getComma()
+	{
+		boolean[][] arr = { {false, false},
 							{true, false},
 							{false, false}};
 		return arr;
 	}
 	
+	public boolean[][] getQuestionMark()
+	{
+		boolean[][] arr = { {false, false},
+							{true, false},
+							{true, true}};
+		return arr;
+	}
 	
+	public boolean[][] getSemicolon()
+	{
+		boolean[][] arr = { {false, false},
+							{true, false},
+							{true, false}};
+		return arr;
+	}
 	
+	public boolean[][] getExcalamationPoint()
+	{
+		boolean[][] arr = { {false, false},
+							{true, true},
+							{true, false}};
+		return arr;
+	}	
 	
 }
