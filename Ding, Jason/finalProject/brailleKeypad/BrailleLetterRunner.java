@@ -1,8 +1,5 @@
 package brailleKeypad;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class BrailleLetterRunner 
 {
 
@@ -24,18 +21,8 @@ public class BrailleLetterRunner
 	
 	public static void main(String[] args) 
 	{
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		Scanner fromKeyboard = new Scanner(System.in);
-		System.out.println("Input letters, 0 to end letter, another 0 for space, another 0 to end");
-		int i = fromKeyboard.nextInt();
-		while(i != 0)
-		{
-			arr.add(i);
-		}
-		BrailleLetter bL = new BrailleLetter(arr);
-		
-		
-		fromKeyboard.close();
+		BrailleLetterUI x= new BrailleLetterUI();
+		x.getSentence();
 		
 	}
 
