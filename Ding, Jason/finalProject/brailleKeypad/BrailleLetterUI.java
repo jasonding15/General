@@ -41,6 +41,8 @@ public class BrailleLetterUI
 			temp.add(arr.get(i));
 			if(temp.get(temp.size() - 1) == 0) // end of letter
 			{
+				if (temp.size() == 1)
+					return str;
 				bL = new BrailleLetter(temp);
 				str += bL.getLetter();
 				temp.clear();

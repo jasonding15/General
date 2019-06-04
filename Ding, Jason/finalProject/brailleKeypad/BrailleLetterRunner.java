@@ -15,6 +15,8 @@ public class BrailleLetterRunner
 		arr.add(8);
 		arr.add(4);
 		arr.add(0);
+		arr.add(0);
+
 		
 		BrailleLetterUI a = new BrailleLetterUI();
 		System.out.println(a.getWord(arr));
