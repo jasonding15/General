@@ -30,7 +30,7 @@ public class BrailleLetterUI
 		return arr;
 	}
 	
-	public void getWord(ArrayList<Integer> arr)
+	public String getWord(ArrayList<Integer> arr) //ends with one 0
 	{
 		String str = "";
 		int i = 0;
@@ -39,38 +39,30 @@ public class BrailleLetterUI
 		while(i < arr.size()) //end of word
 		{
 			temp.add(arr.get(i));
-			if(temp.get(i) == 0) // end of letter
+			if(temp.get(temp.size() - 1) == 0) // end of letter
 			{
-				bL = new BrailleLetter(arr);
-				str += bL;
+				bL = new BrailleLetter(temp);
+				str += bL.getLetter();
+				temp.clear();
 			}
+			i++;
 		}
 		str += " ";
-		System.out.println(str);		
+		return str;
 	}
 	
 	public void getSentence()
 	{
 		ArrayList<Integer> arr = introduction();
-		ArrayList<Integer> temp = new ArrayList<Integer>();
-		int i = 0;
-		System.out.println("You typed: ");
-		while(arr.get(i) != 0 && arr.get(i + 1) != 0 && arr.get(i + 2) != 0) //end of sentence
+		for(int i = 0; i < arr.size(); i++) //end of sentence
 		{
-			System.out.println("got here");
-
 			temp.add(arr.get(i));
 			
 			if(i >= 2 && temp.get(temp.size() - 1) == 0 && temp.get(temp.size() - 2) == 0)//end of word
 			{
-				for(int b = 0; b < temp.size(); b++)
-					System.out.print(temp.get(b));
 				getWord(temp);
 				temp.clear();
 			}
-			i += 1;
-			for(int b = 0; b < arr.size(); b++) // for testing
-				System.out.print(arr.get(b));
 		}
 	}
 }
