@@ -19,6 +19,7 @@
 	<classpathentry kind="src" path="finalProject"/>
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
+	<classpathentry kind="lib" path="libs/cmu_us_kal.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="src" path="magpie_lab"/>
 	<classpathentry kind="src" path="gridworld"/>

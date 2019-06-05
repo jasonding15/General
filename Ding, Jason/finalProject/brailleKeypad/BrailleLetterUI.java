@@ -14,12 +14,12 @@ public class BrailleLetterUI
 	
 	public ArrayList<Integer> introduction()
 	{
-		System.out.println("Enter your response. 0 to end the letter, another to end the word: ");
+		System.out.println("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
 		String str = fromKeyboard.nextLine();
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-		while(str.length() < 3 || ! str.substring(str.length() - 3).equals("000"))
+		while(str.length() < 2 || ! str.substring(str.length() - 2).equals("00"))
 		{
-			System.out.println("Invalid input, pls end with 3 0s : ");
+			System.out.println("Invalid input, pls end with Two 0s : ");
 			str = fromKeyboard.nextLine();
 		}
 		for(int i = 0; i < str.length(); i++)
