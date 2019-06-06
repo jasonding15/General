@@ -92,6 +92,8 @@ public class BrailleLetter
 			return "?";
 		if(Arrays.deepEquals(arr, getComma()))
 			return ",";
+		if(Arrays.deepEquals(arr, getNumberSign()))
+			return "#";
 		
 		
 		return "Not a letter";

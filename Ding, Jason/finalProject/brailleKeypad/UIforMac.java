@@ -3,27 +3,25 @@ package brailleKeypad;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BrailleLetterUI 
+public class UIforMac 
 {
 	private Scanner fromKeyboard;
 
-	public BrailleLetterUI()
+	public UIforMac()
 	{
 		fromKeyboard = new Scanner(System.in);
 	}
 	
 	public ArrayList<Integer> introduction()
 	{
-		Voice v = new Voice("kevin16");
-
 		System.out.println("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
-		v.say("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
+		SpeechForMac.say("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
 		String str = fromKeyboard.nextLine();
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		while(str.length() < 2 || ! str.substring(str.length() - 2).equals("00"))
 		{
 			System.out.println("Invalid input, please end with Two 0s : ");
-			v.say("Invalid input, pls end with Two 0s : ");
+			SpeechForMac.say("Invalid input, pls end with Two 0s : ");
 			str = fromKeyboard.nextLine();
 		}
 		for(int i = 0; i < str.length(); i++)
@@ -59,7 +57,6 @@ public class BrailleLetterUI
 	public void getSentence()
 	{
 		ArrayList<Integer> arr = introduction();
-		Voice v = new Voice("kevin16");
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		for(int i = 0; i < arr.size(); i++) //end of sentence
 		{
@@ -69,7 +66,7 @@ public class BrailleLetterUI
 			{
 				String s = getWord(temp) + " ";
 				System.out.print(s);
-				v.say(s);
+				SpeechForMac.say(s);
 				temp.clear();
 			}
 		}
