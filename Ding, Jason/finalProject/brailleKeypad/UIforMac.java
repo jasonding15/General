@@ -14,8 +14,11 @@ public class UIforMac
 	
 	public ArrayList<Integer> introduction()
 	{
-		System.out.println("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
-		SpeechForMac.say("Enter your response. 0 to end the letter, another to end the word, enter to end: ");
+		String s = "Enter your response using the keypad to signify braille leters. Enter 0 to end the letter, "
+				+ "two zeros to end the word, and hit enter to end and hear your response:  ";
+//		String s = "Go: ";
+		System.out.print(s);
+		SpeechForMac.say(s);
 		String str = fromKeyboard.nextLine();
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		while(str.length() < 2 || ! str.substring(str.length() - 2).equals("00"))
@@ -58,17 +61,18 @@ public class UIforMac
 	{
 		ArrayList<Integer> arr = introduction();
 		ArrayList<Integer> temp = new ArrayList<Integer>();
+		String s = "";
 		for(int i = 0; i < arr.size(); i++) //end of sentence
 		{
 			temp.add(arr.get(i));
 			
 			if(temp.size() >= 2 && temp.get(temp.size() - 1) == 0 && temp.get(temp.size() - 2) == 0)//end of word
 			{
-				String s = getWord(temp) + " ";
-				System.out.print(s);
-				SpeechForMac.say(s);
+				s += getWord(temp) + " ";
 				temp.clear();
 			}
 		}
+		System.out.print(s);
+		SpeechForMac.say(s);
 	}
 }

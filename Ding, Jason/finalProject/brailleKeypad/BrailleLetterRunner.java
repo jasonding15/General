@@ -22,11 +22,18 @@ public class BrailleLetterRunner
 //		System.out.println(a.getWord(arr));
 //	}
 	
+//	public static void main(String[] args) 
+//	{
+//		BrailleLetterUI x= new BrailleLetterUI();
+//		x.getSentence();
+//		
+//	}
 	public static void main(String[] args) 
 	{
-		BrailleLetterUI x= new BrailleLetterUI();
+		UIforMac x= new UIforMac();
 		x.getSentence();
 		
 	}
+
 
 }

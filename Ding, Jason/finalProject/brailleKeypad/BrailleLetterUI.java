@@ -60,6 +60,7 @@ public class BrailleLetterUI
 	{
 		ArrayList<Integer> arr = introduction();
 		Voice v = new Voice("kevin16");
+		String s = "";
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 		for(int i = 0; i < arr.size(); i++) //end of sentence
 		{
@@ -67,11 +68,11 @@ public class BrailleLetterUI
 			
 			if(temp.size() >= 2 && temp.get(temp.size() - 1) == 0 && temp.get(temp.size() - 2) == 0)//end of word
 			{
-				String s = getWord(temp) + " ";
-				System.out.print(s);
-				v.say(s);
+				s = getWord(temp) + " ";
 				temp.clear();
 			}
 		}
+		System.out.print(s);
+		v.say(s);
 	}
 }
