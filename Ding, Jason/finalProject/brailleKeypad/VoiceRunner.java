@@ -8,7 +8,7 @@ public class VoiceRunner {
 //		v.say("Meg does no work");
 //		v.say("Alex span is cooler than meg");
 //		v.say("Mr.Horn this project better get a one hundred.");
-		SpeechForMac.say("Apologies");
+		SpeechForMac.say("test test");
 
 
 	}
