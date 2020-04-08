@@ -62,13 +62,13 @@ public class InsertionSort
     }
 
     // recursive variant sorts x[start] ... x[x.length - 1]
-    private static void sort(int[] x, int start)
+//    private static void sort(int[] x, int start)
     {
         
     }
 
     // inserts value into correct position in x[0]...x[start]
-    private static void insert(int[] x, int value, int start)
+//    private static void insert(int[] x, int value, int start)
     {
     		
     }
