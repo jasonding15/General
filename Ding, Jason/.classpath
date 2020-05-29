@@ -17,6 +17,7 @@
 	<classpathentry kind="src" path="chapter13"/>
 	<classpathentry kind="src" path="chapter19"/>
 	<classpathentry kind="src" path="finalProject"/>
+	<classpathentry kind="src" path="project"/>
 	<classpathentry kind="lib" path="libs/core.jar"/>
 	<classpathentry kind="lib" path="libs/gridworld.jar"/>
 	<classpathentry kind="lib" path="libs/cmu_us_kal.jar"/>
