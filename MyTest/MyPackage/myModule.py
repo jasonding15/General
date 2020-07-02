@@ -73,7 +73,7 @@ def check(keyword):
 def splitColumn():
     datafile = open("/Users/jasonding15/Desktop/Admera/Resource/GeneVCF/TCGA-A6-2686_Mutect2_V1_anno_GeneList.vcf", "r")
     reader = datafile.readlines()
-    fields = reader[250].split("\t")
+    fields = reader[251].split("\t")
     print(fields[7])
     fields2 = fields[7].split(";")
     c = 0
@@ -99,5 +99,23 @@ def splitColumn():
 #check_Sample()
 #splitColumn()
 vcf_reader = vcf.Reader(open('/Users/jasonding15/Desktop/Admera/Resource/GeneVCF/TCGA-A6-2686_Mutect2_V1_anno_GeneList.vcf', 'r'))
+#for record in vcf_reader:
+    #print(record)
+    #print( record.INFO, record.FORMAT, record.genotype('TUMOR')['GT'], record.genotype('NORMAL')['GT'], record.get_hets())
+
 for record in vcf_reader:
-    print(record)
+    x = record.INFO["CSQ"]
+    print("\n")
+    for a in x:
+        y = a.split(("|"))
+        if(y[2] == "HIGH" or y[2] == "MODERATE"):
+            print(y[2], y[35])
+        
+    #if(y[2] == "HIGH" or y[2] == "MODERATE"):
+     #   print(y[2], y[35])
+     #   print(x[0])
+        
+   
+
+
+
