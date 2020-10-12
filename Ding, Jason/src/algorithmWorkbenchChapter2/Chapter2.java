@@ -17,7 +17,7 @@ public class Chapter2
 		b = a / 3.14;
 		a = b - 8;
 //		char c ='K';
-//		c = 'B';
+//		c = 'B'; 
 		
 		double speed = 20, time = 10; //number 7
 		double distance = speed * time;
