@@ -50,9 +50,6 @@ public class ChapterDos
 		+ name + " adopted a(n) " + animal + " named " + petName + ". They both lived happily every after!");
 		
 		input.close();
-		
-		
-		
 
 	}
 

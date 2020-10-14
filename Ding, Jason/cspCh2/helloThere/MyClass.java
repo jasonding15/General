@@ -1,4 +1,4 @@
-package myModule;
+package helloThere;
 
 public class MyClass {
 

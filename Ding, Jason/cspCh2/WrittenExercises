@@ -1,0 +1,31 @@
+Chapter 2:
+
+2.2
+MC: 
+5) b
+Predict the output: 
+3) I am the incrediblecomputing 
+machine
+and I will
+amaze
+you.
+
+4) This will break since there is quotations outside of the ().
+
+2.3
+MC:
+2) B
+17) True
+18) False
+SA:
+3: Self documenting program is a program that can be read and understood without extra text 
+explaining what the code is doing, often naming variables after their functions to make it easy to follow.
+6: A declaration tells the compiler the name of the variable and the type of data it will hold.
+7: Variables should be named after what they store. Something like 'x' is too generic and can mean anything.
+
+2.4
+MC:
+4) B,C
+AW
+1:
+

@@ -1,4 +1,4 @@
-package ch2;
+package personalInfo;
 
 import java.util.Scanner;
 
