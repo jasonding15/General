@@ -1,6 +1,6 @@
 package programmingChallenge;
 
-public class NumberSeven {
+public class LandCalc {
 
 	public static void main(String[] args) 
 	{

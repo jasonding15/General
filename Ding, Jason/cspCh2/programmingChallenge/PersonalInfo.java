@@ -1,4 +1,4 @@
-package personalInfo;
+package programmingChallenge;
 
 public class PersonalInfo {
 
