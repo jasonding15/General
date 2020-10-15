@@ -48,8 +48,7 @@ public class MyArrayListAutomatedTest extends TestCase
         assertTrue(mAL.size() == 5);
     }
     
-    @SuppressWarnings("deprecation")
-	public void testGet()
+    public void testGet()
     {
         MyArrayList<Integer> mAL = new MyArrayList<Integer>();
         mAL.setA(new Integer[]{5, 3, null, null, null, null, null, null, null, null});
@@ -90,8 +89,7 @@ public class MyArrayListAutomatedTest extends TestCase
         }
     }
 
-    @SuppressWarnings("deprecation")
-	public void testSet()
+    public void testSet()
     {
         MyArrayList<Integer> mAL = new MyArrayList<Integer>();
         mAL.setA(new Integer[]{5, 3, null, null, null, null, null, null, null, null});
@@ -104,8 +102,7 @@ public class MyArrayListAutomatedTest extends TestCase
                 new Integer[]{5, 7, null, null, null, null, null, null, null, null}));
     }
     
-    @SuppressWarnings("deprecation")
-	public void testSetReturnsOldElement()
+    public void testSetReturnsOldElement()
     {
         MyArrayList<Integer> mAL = new MyArrayList<Integer>();
         mAL.setA(new Integer[]{5, 3, null, null, null, null, null, null, null, null});
